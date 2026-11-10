@@ -1,0 +1,13 @@
+D:\c#\Nilora\backend\Nilora.Domain\bin\Debug\net10.0\Nilora.Domain.deps.json
+D:\c#\Nilora\backend\Nilora.Domain\bin\Debug\net10.0\Nilora.Domain.dll
+D:\c#\Nilora\backend\Nilora.Domain\bin\Debug\net10.0\Nilora.Domain.pdb
+D:\c#\Nilora\backend\Nilora.Domain\obj\Debug\net10.0\Nilora.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\c#\Nilora\backend\Nilora.Domain\obj\Debug\net10.0\Nilora.Domain.AssemblyInfoInputs.cache
+D:\c#\Nilora\backend\Nilora.Domain\obj\Debug\net10.0\Nilora.Domain.AssemblyInfo.cs
+D:\c#\Nilora\backend\Nilora.Domain\obj\Debug\net10.0\Nilora.Domain.csproj.CoreCompileInputs.cache
+D:\c#\Nilora\backend\Nilora.Domain\obj\Debug\net10.0\Nilora.Domain.sourcelink.json
+D:\c#\Nilora\backend\Nilora.Domain\obj\Debug\net10.0\Nilora.Domain.dll
+D:\c#\Nilora\backend\Nilora.Domain\obj\Debug\net10.0\refint\Nilora.Domain.dll
+D:\c#\Nilora\backend\Nilora.Domain\obj\Debug\net10.0\Nilora.Domain.pdb
+D:\c#\Nilora\backend\Nilora.Domain\obj\Debug\net10.0\ref\Nilora.Domain.dll
+D:\c#\Nilora\backend\Nilora.Domain\obj\Debug\net10.0\Nilora.D.5514F522.Up2Date

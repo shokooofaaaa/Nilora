@@ -1,0 +1,6 @@
+@Nilora.Api_HostAddress = http://localhost:5030
+
+GET {{Nilora.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

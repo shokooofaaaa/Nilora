@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-Nilora.Worker-3b5fc1fe-b60b-4cbf-9a7f-af9aa5a93ec9</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.14" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Nilora.Application\Nilora.Application.csproj" />
+    <ProjectReference Include="..\Nilora.Infrastructure\Nilora.Infrastructure.csproj" />
+    <ProjectReference Include="..\Nilora.Intelligence\Nilora.Intelligence.csproj" />
+  </ItemGroup>
+</Project>
