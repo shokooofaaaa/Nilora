@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Nilora.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22c24e53cbbaf18d23f28df916f652ba2da5dbca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ffb37a34203538fab5e6bf18bcbea6b5ae6fe666")]
 [assembly: System.Reflection.AssemblyProductAttribute("Nilora.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Nilora.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
