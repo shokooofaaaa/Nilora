@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "D:\\c#\\Nilora\\backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1AB65758-C3B8-4566-B90E-91B1C183AE95}|Nilora.Domain\\Nilora.Domain.csproj|d:\\c#\\nilora\\backend\\nilora.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AB65758-C3B8-4566-B90E-91B1C183AE95}|Nilora.Domain\\Nilora.Domain.csproj|solutionrelative:nilora.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AB65758-C3B8-4566-B90E-91B1C183AE95}|Nilora.Domain\\Nilora.Domain.csproj|d:\\c#\\nilora\\backend\\nilora.domain\\entities\\technician.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AB65758-C3B8-4566-B90E-91B1C183AE95}|Nilora.Domain\\Nilora.Domain.csproj|solutionrelative:nilora.domain\\entities\\technician.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AB65758-C3B8-4566-B90E-91B1C183AE95}|Nilora.Domain\\Nilora.Domain.csproj|d:\\c#\\nilora\\backend\\nilora.domain\\enums\\reviewstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AB65758-C3B8-4566-B90E-91B1C183AE95}|Nilora.Domain\\Nilora.Domain.csproj|solutionrelative:nilora.domain\\enums\\reviewstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACC108F7-2B11-4234-AFE1-D522D903128A}|Nilora.Infrastructure\\Nilora.Infrastructure.csproj|d:\\c#\\nilora\\backend\\nilora.infrastructure\\persistence\\migrations\\20261111165449_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACC108F7-2B11-4234-AFE1-D522D903128A}|Nilora.Infrastructure\\Nilora.Infrastructure.csproj|solutionrelative:nilora.infrastructure\\persistence\\migrations\\20261111165449_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6E3AF819-4BF8-471F-81AA-DFDE76918327}|Nilora.Api\\Nilora.Api.csproj|d:\\c#\\nilora\\backend\\nilora.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6E3AF819-4BF8-471F-81AA-DFDE76918327}|Nilora.Api\\Nilora.Api.csproj|solutionrelative:nilora.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -75,16 +91,8 @@
       "RelativeMoniker": "D:0:0:{ACC108F7-2B11-4234-AFE1-D522D903128A}|Nilora.Infrastructure\\Nilora.Infrastructure.csproj|solutionrelative:nilora.infrastructure\\persistence\\configurations\\portfolioitemconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1AB65758-C3B8-4566-B90E-91B1C183AE95}|Nilora.Domain\\Nilora.Domain.csproj|d:\\c#\\nilora\\backend\\nilora.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1AB65758-C3B8-4566-B90E-91B1C183AE95}|Nilora.Domain\\Nilora.Domain.csproj|solutionrelative:nilora.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1AB65758-C3B8-4566-B90E-91B1C183AE95}|Nilora.Domain\\Nilora.Domain.csproj|d:\\c#\\nilora\\backend\\nilora.domain\\entities\\technicianskill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1AB65758-C3B8-4566-B90E-91B1C183AE95}|Nilora.Domain\\Nilora.Domain.csproj|solutionrelative:nilora.domain\\entities\\technicianskill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1AB65758-C3B8-4566-B90E-91B1C183AE95}|Nilora.Domain\\Nilora.Domain.csproj|d:\\c#\\nilora\\backend\\nilora.domain\\entities\\technician.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1AB65758-C3B8-4566-B90E-91B1C183AE95}|Nilora.Domain\\Nilora.Domain.csproj|solutionrelative:nilora.domain\\entities\\technician.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1AB65758-C3B8-4566-B90E-91B1C183AE95}|Nilora.Domain\\Nilora.Domain.csproj|d:\\c#\\nilora\\backend\\nilora.domain\\entities\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -106,7 +114,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 21,
           "Children": [
             {
               "$type": "Bookmark",
@@ -127,6 +135,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ReviewStatus.cs",
+              "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Enums\\ReviewStatus.cs",
+              "RelativeDocumentMoniker": "Nilora.Domain\\Enums\\ReviewStatus.cs",
+              "ToolTip": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Enums\\ReviewStatus.cs",
+              "RelativeToolTip": "Nilora.Domain\\Enums\\ReviewStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T16:57:26.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20261111165449_InitialCreate.cs",
+              "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Infrastructure\\Persistence\\Migrations\\20261111165449_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Nilora.Infrastructure\\Persistence\\Migrations\\20261111165449_InitialCreate.cs",
+              "ToolTip": "D:\\c#\\Nilora\\backend\\Nilora.Infrastructure\\Persistence\\Migrations\\20261111165449_InitialCreate.cs",
+              "RelativeToolTip": "Nilora.Infrastructure\\Persistence\\Migrations\\20261111165449_InitialCreate.cs",
+              "ViewState": "AgIAAM0AAAAAAAAAAAA0wBwBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T16:55:02.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Api\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "Nilora.Api\\Controllers\\DashboardController.cs",
@@ -139,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "DashboardService.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Infrastructure\\Services\\DashboardService.cs",
               "RelativeDocumentMoniker": "Nilora.Infrastructure\\Services\\DashboardService.cs",
@@ -152,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "IDashboardService.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Application\\Interfaces\\IDashboardService.cs",
               "RelativeDocumentMoniker": "Nilora.Application\\Interfaces\\IDashboardService.cs",
@@ -165,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "RatingDistributionDto.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Application\\DTOS\\Dashboard\\RatingDistributionDto.cs",
               "RelativeDocumentMoniker": "Nilora.Application\\DTOS\\Dashboard\\RatingDistributionDto.cs",
@@ -178,7 +212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "DashboardOverviewDto.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Application\\DTOS\\Dashboard\\DashboardOverviewDto.cs",
               "RelativeDocumentMoniker": "Nilora.Application\\DTOS\\Dashboard\\DashboardOverviewDto.cs",
@@ -191,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "Nilora.Application",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj",
               "RelativeDocumentMoniker": "Nilora.Application\\Nilora.Application.csproj",
@@ -204,7 +238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "DatabaseController.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Api\\Controllers\\DatabaseController.cs",
               "RelativeDocumentMoniker": "Nilora.Api\\Controllers\\DatabaseController.cs",
@@ -217,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "Nilora.Api",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Api\\Nilora.Api.csproj",
               "RelativeDocumentMoniker": "Nilora.Api\\Nilora.Api.csproj",
@@ -230,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "Nilora.Infrastructure",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Infrastructure\\Nilora.Infrastructure.csproj",
               "RelativeDocumentMoniker": "Nilora.Infrastructure\\Nilora.Infrastructure.csproj",
@@ -243,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Worker\\Program.cs",
               "RelativeDocumentMoniker": "Nilora.Worker\\Program.cs",
@@ -256,20 +290,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Api\\Program.cs",
               "RelativeDocumentMoniker": "Nilora.Api\\Program.cs",
               "ToolTip": "D:\\c#\\Nilora\\backend\\Nilora.Api\\Program.cs",
               "RelativeToolTip": "Nilora.Api\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAiwB4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-11T14:33:29.467Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Api\\appsettings.json",
               "RelativeDocumentMoniker": "Nilora.Api\\appsettings.json",
@@ -282,7 +316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Worker\\appsettings.json",
               "RelativeDocumentMoniker": "Nilora.Worker\\appsettings.json",
@@ -295,7 +329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "PortfolioItemConfiguration.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Infrastructure\\Persistence\\Configurations\\PortfolioItemConfiguration.cs",
               "RelativeDocumentMoniker": "Nilora.Infrastructure\\Persistence\\Configurations\\PortfolioItemConfiguration.cs",
@@ -308,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "NiloraDbContext.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Infrastructure\\Persistence\\NiloraDbContext.cs",
               "RelativeDocumentMoniker": "Nilora.Infrastructure\\Persistence\\NiloraDbContext.cs",
@@ -321,20 +355,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 0,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Entities\\User.cs",
               "RelativeDocumentMoniker": "Nilora.Domain\\Entities\\User.cs",
               "ToolTip": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Entities\\User.cs",
               "RelativeToolTip": "Nilora.Domain\\Entities\\User.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAAFUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-11T14:18:57.82Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "TechnicianSkill.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Entities\\TechnicianSkill.cs",
               "RelativeDocumentMoniker": "Nilora.Domain\\Entities\\TechnicianSkill.cs",
@@ -347,20 +381,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 1,
               "Title": "Technician.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Entities\\Technician.cs",
               "RelativeDocumentMoniker": "Nilora.Domain\\Entities\\Technician.cs",
               "ToolTip": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Entities\\Technician.cs",
               "RelativeToolTip": "Nilora.Domain\\Entities\\Technician.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAAAC4AAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAkwG8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-11T14:18:27.9Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "Skill.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Entities\\Skill.cs",
               "RelativeDocumentMoniker": "Nilora.Domain\\Entities\\Skill.cs",
@@ -373,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "ReviewMedia.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Entities\\ReviewMedia.cs",
               "RelativeDocumentMoniker": "Nilora.Domain\\Entities\\ReviewMedia.cs",
@@ -386,7 +420,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "Review.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Entities\\Review.cs",
               "RelativeDocumentMoniker": "Nilora.Domain\\Entities\\Review.cs",
@@ -399,7 +433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "PortfolioMedia.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Entities\\PortfolioMedia.cs",
               "RelativeDocumentMoniker": "Nilora.Domain\\Entities\\PortfolioMedia.cs",
@@ -412,7 +446,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "PortfolioItem.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Entities\\PortfolioItem.cs",
               "RelativeDocumentMoniker": "Nilora.Domain\\Entities\\PortfolioItem.cs",
@@ -425,7 +459,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": ".gitignore",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\.gitignore",
               "RelativeDocumentMoniker": ".gitignore",

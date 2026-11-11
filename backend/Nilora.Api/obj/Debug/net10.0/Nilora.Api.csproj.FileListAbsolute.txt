@@ -369,3 +369,4 @@ D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\refint\
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\Nilora.Api.pdb
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\Nilora.Api.genruntimeconfig.cache
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\ref\Nilora.Api.dll
+D:\c#\Nilora\backend\Nilora.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
