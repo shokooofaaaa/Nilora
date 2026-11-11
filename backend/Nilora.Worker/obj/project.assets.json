@@ -1266,6 +1266,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "10.0.15",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
           "Nilora.Application": "1.0.0",
@@ -3021,23 +3022,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Hasan\\.nuget\\packages\\": {},
-    "D:\\Programs\\VisualStudio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\PQ\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Worker\\Nilora.Worker.csproj",
+      "projectUniqueName": "D:\\c#\\Nilora\\backend\\Nilora.Worker\\Nilora.Worker.csproj",
       "projectName": "Nilora.Worker",
-      "projectPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Worker\\Nilora.Worker.csproj",
-      "packagesPath": "C:\\Users\\Hasan\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Worker\\obj\\",
+      "projectPath": "D:\\c#\\Nilora\\backend\\Nilora.Worker\\Nilora.Worker.csproj",
+      "packagesPath": "C:\\Users\\PQ\\.nuget\\packages\\",
+      "outputPath": "D:\\c#\\Nilora\\backend\\Nilora.Worker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Programs\\VisualStudio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Hasan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PQ\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3045,7 +3046,6 @@
         "net10.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3053,14 +3053,14 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj": {
-              "projectPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj"
+            "D:\\c#\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj": {
+              "projectPath": "D:\\c#\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj"
             },
-            "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Infrastructure\\Nilora.Infrastructure.csproj": {
-              "projectPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Infrastructure\\Nilora.Infrastructure.csproj"
+            "D:\\c#\\Nilora\\backend\\Nilora.Infrastructure\\Nilora.Infrastructure.csproj": {
+              "projectPath": "D:\\c#\\Nilora\\backend\\Nilora.Infrastructure\\Nilora.Infrastructure.csproj"
             },
-            "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Intelligence\\Nilora.Intelligence.csproj": {
-              "projectPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Intelligence\\Nilora.Intelligence.csproj"
+            "D:\\c#\\Nilora\\backend\\Nilora.Intelligence\\Nilora.Intelligence.csproj": {
+              "projectPath": "D:\\c#\\Nilora\\backend\\Nilora.Intelligence\\Nilora.Intelligence.csproj"
             }
           }
         }

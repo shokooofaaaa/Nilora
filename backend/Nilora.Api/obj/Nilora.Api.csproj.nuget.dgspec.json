@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Api\\Nilora.Api.csproj": {}
+    "D:\\c#\\Nilora\\backend\\Nilora.Api\\Nilora.Api.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Api\\Nilora.Api.csproj": {
+    "D:\\c#\\Nilora\\backend\\Nilora.Api\\Nilora.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Api\\Nilora.Api.csproj",
+        "projectUniqueName": "D:\\c#\\Nilora\\backend\\Nilora.Api\\Nilora.Api.csproj",
         "projectName": "Nilora.Api",
-        "projectPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Api\\Nilora.Api.csproj",
-        "packagesPath": "C:\\Users\\Hasan\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Api\\obj\\",
+        "projectPath": "D:\\c#\\Nilora\\backend\\Nilora.Api\\Nilora.Api.csproj",
+        "packagesPath": "C:\\Users\\PQ\\.nuget\\packages\\",
+        "outputPath": "D:\\c#\\Nilora\\backend\\Nilora.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Programs\\VisualStudio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hasan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PQ\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -25,7 +25,6 @@
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -33,14 +32,14 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj": {
-                "projectPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj"
+              "D:\\c#\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj": {
+                "projectPath": "D:\\c#\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj"
               },
-              "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Infrastructure\\Nilora.Infrastructure.csproj": {
-                "projectPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Infrastructure\\Nilora.Infrastructure.csproj"
+              "D:\\c#\\Nilora\\backend\\Nilora.Infrastructure\\Nilora.Infrastructure.csproj": {
+                "projectPath": "D:\\c#\\Nilora\\backend\\Nilora.Infrastructure\\Nilora.Infrastructure.csproj"
               },
-              "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Intelligence\\Nilora.Intelligence.csproj": {
-                "projectPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Intelligence\\Nilora.Intelligence.csproj"
+              "D:\\c#\\Nilora\\backend\\Nilora.Intelligence\\Nilora.Intelligence.csproj": {
+                "projectPath": "D:\\c#\\Nilora\\backend\\Nilora.Intelligence\\Nilora.Intelligence.csproj"
               }
             }
           }
@@ -518,20 +517,20 @@
         }
       }
     },
-    "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj": {
+    "D:\\c#\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj",
+        "projectUniqueName": "D:\\c#\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj",
         "projectName": "Nilora.Application",
-        "projectPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj",
-        "packagesPath": "C:\\Users\\Hasan\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Application\\obj\\",
+        "projectPath": "D:\\c#\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj",
+        "packagesPath": "C:\\Users\\PQ\\.nuget\\packages\\",
+        "outputPath": "D:\\c#\\Nilora\\backend\\Nilora.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Programs\\VisualStudio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hasan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PQ\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -539,7 +538,6 @@
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -547,8 +545,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Nilora.Domain.csproj": {
-                "projectPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Nilora.Domain.csproj"
+              "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Nilora.Domain.csproj": {
+                "projectPath": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Nilora.Domain.csproj"
               }
             }
           }
@@ -585,7 +583,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -863,20 +861,20 @@
         }
       }
     },
-    "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Nilora.Domain.csproj": {
+    "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Nilora.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Nilora.Domain.csproj",
+        "projectUniqueName": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Nilora.Domain.csproj",
         "projectName": "Nilora.Domain",
-        "projectPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Nilora.Domain.csproj",
-        "packagesPath": "C:\\Users\\Hasan\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\obj\\",
+        "projectPath": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Nilora.Domain.csproj",
+        "packagesPath": "C:\\Users\\PQ\\.nuget\\packages\\",
+        "outputPath": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Programs\\VisualStudio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hasan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PQ\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -884,7 +882,6 @@
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -1204,20 +1201,20 @@
         }
       }
     },
-    "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Infrastructure\\Nilora.Infrastructure.csproj": {
+    "D:\\c#\\Nilora\\backend\\Nilora.Infrastructure\\Nilora.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Infrastructure\\Nilora.Infrastructure.csproj",
+        "projectUniqueName": "D:\\c#\\Nilora\\backend\\Nilora.Infrastructure\\Nilora.Infrastructure.csproj",
         "projectName": "Nilora.Infrastructure",
-        "projectPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Infrastructure\\Nilora.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Hasan\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Infrastructure\\obj\\",
+        "projectPath": "D:\\c#\\Nilora\\backend\\Nilora.Infrastructure\\Nilora.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\PQ\\.nuget\\packages\\",
+        "outputPath": "D:\\c#\\Nilora\\backend\\Nilora.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Programs\\VisualStudio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hasan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PQ\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1225,7 +1222,6 @@
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -1233,8 +1229,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj": {
-                "projectPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj"
+              "D:\\c#\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj": {
+                "projectPath": "D:\\c#\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj"
               }
             }
           }
@@ -1256,6 +1252,16 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[10.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.15, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[10.0.*, )"
@@ -1563,20 +1569,20 @@
         }
       }
     },
-    "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Intelligence\\Nilora.Intelligence.csproj": {
+    "D:\\c#\\Nilora\\backend\\Nilora.Intelligence\\Nilora.Intelligence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Intelligence\\Nilora.Intelligence.csproj",
+        "projectUniqueName": "D:\\c#\\Nilora\\backend\\Nilora.Intelligence\\Nilora.Intelligence.csproj",
         "projectName": "Nilora.Intelligence",
-        "projectPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Intelligence\\Nilora.Intelligence.csproj",
-        "packagesPath": "C:\\Users\\Hasan\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Intelligence\\obj\\",
+        "projectPath": "D:\\c#\\Nilora\\backend\\Nilora.Intelligence\\Nilora.Intelligence.csproj",
+        "packagesPath": "C:\\Users\\PQ\\.nuget\\packages\\",
+        "outputPath": "D:\\c#\\Nilora\\backend\\Nilora.Intelligence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Programs\\VisualStudio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hasan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PQ\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1584,7 +1590,6 @@
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -1592,8 +1597,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj": {
-                "projectPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj"
+              "D:\\c#\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj": {
+                "projectPath": "D:\\c#\\Nilora\\backend\\Nilora.Application\\Nilora.Application.csproj"
               }
             }
           }
@@ -1640,7 +1645,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

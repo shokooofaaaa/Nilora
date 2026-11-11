@@ -8,23 +8,23 @@
     "net10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Hasan\\.nuget\\packages\\": {},
-    "D:\\Programs\\VisualStudio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\PQ\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Nilora.Domain.csproj",
+      "projectUniqueName": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Nilora.Domain.csproj",
       "projectName": "Nilora.Domain",
-      "projectPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Nilora.Domain.csproj",
-      "packagesPath": "C:\\Users\\Hasan\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\obj\\",
+      "projectPath": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Nilora.Domain.csproj",
+      "packagesPath": "C:\\Users\\PQ\\.nuget\\packages\\",
+      "outputPath": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Programs\\VisualStudio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Hasan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PQ\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -32,7 +32,6 @@
         "net10.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

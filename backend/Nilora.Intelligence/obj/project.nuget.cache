@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "LT3mKWAPHYA=",
+  "dgSpecHash": "R4hhg5Xofoo=",
   "success": true,
-  "projectFilePath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Intelligence\\Nilora.Intelligence.csproj",
+  "projectFilePath": "D:\\c#\\Nilora\\backend\\Nilora.Intelligence\\Nilora.Intelligence.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Hasan\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\10.0.15\\microsoft.extensions.configuration.abstractions.10.0.15.nupkg.sha512",
-    "C:\\Users\\Hasan\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.15\\microsoft.extensions.dependencyinjection.abstractions.10.0.15.nupkg.sha512",
-    "C:\\Users\\Hasan\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.15\\microsoft.extensions.primitives.10.0.15.nupkg.sha512"
+    "C:\\Users\\PQ\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\10.0.15\\microsoft.extensions.configuration.abstractions.10.0.15.nupkg.sha512",
+    "C:\\Users\\PQ\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.15\\microsoft.extensions.dependencyinjection.abstractions.10.0.15.nupkg.sha512",
+    "C:\\Users\\PQ\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.15\\microsoft.extensions.primitives.10.0.15.nupkg.sha512"
   ],
   "logs": []
 }
