@@ -34,7 +34,6 @@ D:\c#\Nilora\backend\Nilora.Api\obj\Debug\net10.0\staticwebassets.build.json.cac
 D:\c#\Nilora\backend\Nilora.Api\obj\Debug\net10.0\staticwebassets.development.json
 D:\c#\Nilora\backend\Nilora.Api\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 D:\c#\Nilora\backend\Nilora.Api\obj\Debug\net10.0\swae.build.ex.cache
-D:\c#\Nilora\backend\Nilora.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 D:\c#\Nilora\backend\Nilora.Api\obj\Debug\net10.0\Nilora.Api.csproj.Up2Date
 D:\c#\Nilora\backend\Nilora.Api\obj\Debug\net10.0\Nilora.Api.dll
 D:\c#\Nilora\backend\Nilora.Api\obj\Debug\net10.0\refint\Nilora.Api.dll
@@ -370,3 +369,4 @@ D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\refint\
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\Nilora.Api.pdb
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\Nilora.Api.genruntimeconfig.cache
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\ref\Nilora.Api.dll
+D:\c#\Nilora\backend\Nilora.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

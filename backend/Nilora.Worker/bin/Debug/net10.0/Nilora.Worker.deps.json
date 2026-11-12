@@ -895,6 +895,7 @@
       },
       "Nilora.Infrastructure/1.0.0": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "10.0.15",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.15",
           "Microsoft.Extensions.Configuration.Abstractions": "10.0.15",
           "Nilora.Application": "1.0.0",

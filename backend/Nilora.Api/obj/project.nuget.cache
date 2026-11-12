@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+Z6rIwzAnk8=",
+  "dgSpecHash": "wMKnw6p6j5k=",
   "success": true,
   "projectFilePath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Api\\Nilora.Api.csproj",
   "expectedPackageFiles": [
@@ -64,5 +64,15 @@
     "C:\\Users\\Hasan\\.nuget\\packages\\system.security.cryptography.pkcs\\10.0.13\\system.security.cryptography.pkcs.10.0.13.nupkg.sha512",
     "C:\\Users\\Hasan\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.11\\system.security.cryptography.protecteddata.9.0.11.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "message": "Problem reading the cache file D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Api\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
+      "projectPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Api\\Nilora.Api.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Api\\Nilora.Api.csproj",
+      "targetGraphs": []
+    }
+  ]
 }

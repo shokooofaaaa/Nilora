@@ -34,3 +34,5 @@ D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Infrastructure\obj\Debug\net1
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Infrastructure\obj\Debug\net10.0\refint\Nilora.Infrastructure.dll
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Infrastructure\obj\Debug\net10.0\Nilora.Infrastructure.pdb
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Infrastructure\obj\Debug\net10.0\ref\Nilora.Infrastructure.dll
+D:\c#\Nilora\backend\Nilora.Infrastructure\bin\Debug\net10.0\Nilora.Infrastructure.runtimeconfig.json
+D:\c#\Nilora\backend\Nilora.Infrastructure\obj\Debug\net10.0\Nilora.Infrastructure.genruntimeconfig.cache

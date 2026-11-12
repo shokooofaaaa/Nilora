@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Nilora.Domain\Nilora.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTOS\Dashboard\" />
+  </ItemGroup>
+
 </Project>
