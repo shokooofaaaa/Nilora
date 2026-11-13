@@ -7,21 +7,13 @@ using System.Text;
 
 namespace Nilora.Infrastructure.Persistence.Configurations
 {
-    public class ReviewConfiguration : IEntityTypeConfiguration<Review>
+    public class FeedbackConfiguration : IEntityTypeConfiguration<Feedback>
     {
-        public void Configure(EntityTypeBuilder<Review> builder)
+        public void Configure(EntityTypeBuilder<Feedback> builder)
         {
-            builder.ToTable("Reviews");
+            builder.ToTable("Feedbacks");
 
             builder.HasKey(x => x.Id);
-
-            builder.Property(x => x.FirstName)
-                .IsRequired()
-                .HasMaxLength(100);
-
-            builder.Property(x => x.LastName)
-                .IsRequired()
-                .HasMaxLength(100);
 
             builder.Property(x => x.Comment)
                 .IsRequired()

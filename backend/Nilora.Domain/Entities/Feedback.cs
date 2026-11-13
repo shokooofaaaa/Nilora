@@ -5,17 +5,13 @@ using System.Text;
 
 namespace Nilora.Domain.Entities
 {
-    public class Review
+    public class Feedback
     {
         public int Id { get; private set; }
 
         public int TechnicianId { get; private set; }
 
         public int? AdminId { get; private set; }
-
-        public string FirstName { get; private set; } = null!;
-
-        public string LastName { get; private set; } = null!;
 
         public string Comment { get; private set; } = null!;
 
@@ -31,12 +27,12 @@ namespace Nilora.Domain.Entities
 
         public User? Admin { get; private set; }
 
-        private readonly List<ReviewMedia> _media = [];
-        public IReadOnlyCollection<ReviewMedia> Media => _media;
+        private readonly List<FeedbackMedia> _media = [];
+        public IReadOnlyCollection<FeedbackMedia> Media => _media;
 
-        private Review() { }
+        private Feedback() { }
 
-        public Review(
+        public Feedback(
             int technicianId,
             string firstName,
             string lastName,
@@ -74,9 +70,6 @@ namespace Nilora.Domain.Entities
 
             if (rating < 1 || rating > 5)
                 throw new ArgumentOutOfRangeException(nameof(rating));
-
-            FirstName = firstName.Trim();
-            LastName = lastName.Trim();
             Comment = comment.Trim();
             Rating = rating;
         }
@@ -86,7 +79,7 @@ namespace Nilora.Domain.Entities
             if (string.IsNullOrWhiteSpace(filePath))
                 throw new ArgumentException("File path is required.");
 
-            _media.Add(new ReviewMedia(filePath));
+            _media.Add(new FeedbackMedia(filePath));
         }
 
         public void Approve(int adminId)

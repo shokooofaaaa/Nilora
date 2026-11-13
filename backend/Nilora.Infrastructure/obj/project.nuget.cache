@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mQyuRkIcNX4=",
+  "dgSpecHash": "UakMDjJjh0w=",
   "success": true,
   "projectFilePath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Infrastructure\\Nilora.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -23,6 +23,7 @@
     "C:\\Users\\Hasan\\.nuget\\packages\\microsoft.entityframeworkcore.design\\10.0.15\\microsoft.entityframeworkcore.design.10.0.15.nupkg.sha512",
     "C:\\Users\\Hasan\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\10.0.15\\microsoft.entityframeworkcore.relational.10.0.15.nupkg.sha512",
     "C:\\Users\\Hasan\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\10.0.15\\microsoft.entityframeworkcore.sqlserver.10.0.15.nupkg.sha512",
+    "C:\\Users\\Hasan\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\10.0.15\\microsoft.entityframeworkcore.tools.10.0.15.nupkg.sha512",
     "C:\\Users\\Hasan\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\10.0.15\\microsoft.extensions.caching.abstractions.10.0.15.nupkg.sha512",
     "C:\\Users\\Hasan\\.nuget\\packages\\microsoft.extensions.caching.memory\\10.0.15\\microsoft.extensions.caching.memory.10.0.15.nupkg.sha512",
     "C:\\Users\\Hasan\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\10.0.15\\microsoft.extensions.configuration.abstractions.10.0.15.nupkg.sha512",
@@ -65,15 +66,5 @@
     "C:\\Users\\Hasan\\.nuget\\packages\\system.security.cryptography.pkcs\\10.0.13\\system.security.cryptography.pkcs.10.0.13.nupkg.sha512",
     "C:\\Users\\Hasan\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.11\\system.security.cryptography.protecteddata.9.0.11.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "message": "Problem reading the cache file D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Infrastructure\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
-      "projectPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Infrastructure\\Nilora.Infrastructure.csproj",
-      "warningLevel": 1,
-      "filePath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Infrastructure\\Nilora.Infrastructure.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }

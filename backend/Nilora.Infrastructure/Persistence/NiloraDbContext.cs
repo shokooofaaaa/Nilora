@@ -20,8 +20,8 @@ namespace Nilora.Infrastructure.Persistence
         public DbSet<TechnicianSkill> TechnicianSkills => Set<TechnicianSkill>();
         public DbSet<PortfolioItem> PortfolioItems => Set<PortfolioItem>();
         public DbSet<PortfolioMedia> PortfolioMedia => Set<PortfolioMedia>();
-        public DbSet<Review> Reviews => Set<Review>();
-        public DbSet<ReviewMedia> ReviewMedia => Set<ReviewMedia>();
+        public DbSet<Feedback> Feedbacks => Set<Feedback>();
+        public DbSet<FeedbackMedia> FeedbackMedias => Set<FeedbackMedia>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

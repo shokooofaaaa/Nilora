@@ -7,12 +7,12 @@ using System.Text;
 
 namespace Nilora.Infrastructure.Persistence.Configurations
 {
-    public class ReviewMediaConfiguration
-        : IEntityTypeConfiguration<ReviewMedia>
+    public class FeedbackMediaConfiguration
+        : IEntityTypeConfiguration<FeedbackMedia>
     {
-        public void Configure(EntityTypeBuilder<ReviewMedia> builder)
+        public void Configure(EntityTypeBuilder<FeedbackMedia> builder)
         {
-            builder.ToTable("ReviewMedia");
+            builder.ToTable("FeedbackMedia");
 
             builder.HasKey(x => x.Id);
 

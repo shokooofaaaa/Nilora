@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Nilora.Domain.Entities
 {
-    public class ReviewMedia
+    public class FeedbackMedia
     {
         public int Id { get; private set; }
 
@@ -12,11 +12,11 @@ namespace Nilora.Domain.Entities
 
         public string FilePath { get; private set; } = null!;
 
-        public Review Review { get; private set; } = null!;
+        public Feedback Review { get; private set; } = null!;
 
-        private ReviewMedia() { }
+        private FeedbackMedia() { }
 
-        internal ReviewMedia(string filePath)
+        internal FeedbackMedia(string filePath)
         {
             if (string.IsNullOrWhiteSpace(filePath))
                 throw new ArgumentException("File path is required.");
