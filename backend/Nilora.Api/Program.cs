@@ -15,6 +15,7 @@ builder.Services.AddDbContext<NiloraDbContext>(options =>
         builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddOpenApi();
 builder.Services.AddScoped<IDashboardService, DashboardService>();
+
 builder.Services.AddScoped<IFeedbackService, FeedbackService>();
 var app = builder.Build();
 

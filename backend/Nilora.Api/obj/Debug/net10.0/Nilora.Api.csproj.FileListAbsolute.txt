@@ -183,6 +183,7 @@ D:\c#\Nilora\backend\Nilora.Api\bin\Debug\net10.0\runtimes\win-x86\native\msalru
 D:\c#\Nilora\backend\Nilora.Api\bin\Debug\net10.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
 D:\c#\Nilora\backend\Nilora.Api\bin\Debug\net10.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 D:\c#\Nilora\backend\Nilora.Api\bin\Debug\net10.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\c#\Nilora\backend\Nilora.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\bin\Debug\net10.0\appsettings.Development.json
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\bin\Debug\net10.0\appsettings.json
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\bin\Debug\net10.0\Nilora.Api.staticwebassets.endpoints.json
@@ -362,11 +363,10 @@ D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\staticw
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\staticwebassets.development.json
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\swae.build.ex.cache
-D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\Nilora.Api.csproj.Up2Date
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\Nilora.Api.dll
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\refint\Nilora.Api.dll
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\Nilora.Api.pdb
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\Nilora.Api.genruntimeconfig.cache
 D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\ref\Nilora.Api.dll
-D:\c#\Nilora\backend\Nilora.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+D:\Projects\Alireza-Hasanlou\Nilora\backend\Nilora.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
