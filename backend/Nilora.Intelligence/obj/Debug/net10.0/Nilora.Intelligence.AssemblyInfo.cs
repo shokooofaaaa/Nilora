@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Nilora.Intelligence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a0173c35680a0dfcee240b3b04252e1dda04a65a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f47158fb364db80fe1e87f123c6b0f6448468125")]
 [assembly: System.Reflection.AssemblyProductAttribute("Nilora.Intelligence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Nilora.Intelligence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

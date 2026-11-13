@@ -1,9 +1,9 @@
 {
   "Version": 1,
-<<<<<<< HEAD
-  "WorkspaceRootPath": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\",
+  "WorkspaceRootPath": "D:\\c#\\Nilora\\backend\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{D8999D2C-074F-4048-B62B-DDF74EB1756F}|Nilora.Worker\\Nilora.Worker.csproj|d:\\projects\\alireza-hasanlou\\nilora\\backend\\nilora.worker\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{D8999D2C-074F-4048-B62B-DDF74EB1756F}|Nilora.Worker\\Nilora.Worker.csproj|solutionrelative:nilora.worker\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -19,9 +19,6 @@
       "AbsoluteMoniker": "D:0:0:{1AB65758-C3B8-4566-B90E-91B1C183AE95}|Nilora.Domain\\Nilora.Domain.csproj|d:\\projects\\alireza-hasanlou\\nilora\\backend\\nilora.domain\\entities\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1AB65758-C3B8-4566-B90E-91B1C183AE95}|Nilora.Domain\\Nilora.Domain.csproj|solutionrelative:nilora.domain\\entities\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
 =======
-  "WorkspaceRootPath": "D:\\c#\\Nilora\\backend\\",
-  "Documents": [
-    {
       "AbsoluteMoniker": "D:0:0:{1AB65758-C3B8-4566-B90E-91B1C183AE95}|Nilora.Domain\\Nilora.Domain.csproj|d:\\c#\\nilora\\backend\\nilora.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1AB65758-C3B8-4566-B90E-91B1C183AE95}|Nilora.Domain\\Nilora.Domain.csproj|solutionrelative:nilora.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -134,11 +131,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
-          "SelectedChildIndex": 3,
-=======
           "SelectedChildIndex": 21,
->>>>>>> 871530ede6420a637b6b5a82cd98f390de6164ee
           "Children": [
             {
               "$type": "Bookmark",
@@ -153,44 +146,11 @@
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Worker\\appsettings.json",
-              "RelativeDocumentMoniker": "Nilora.Worker\\appsettings.json",
-              "ToolTip": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Worker\\appsettings.json",
-              "RelativeToolTip": "Nilora.Worker\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-11-12T08:11:54.45Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PortfolioItem.cs",
-              "DocumentMoniker": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Entities\\PortfolioItem.cs",
-              "RelativeDocumentMoniker": "Nilora.Domain\\Entities\\PortfolioItem.cs",
-              "ToolTip": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Entities\\PortfolioItem.cs",
-              "RelativeToolTip": "Nilora.Domain\\Entities\\PortfolioItem.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-12T08:04:25.566Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Review.cs",
-              "DocumentMoniker": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Entities\\Review.cs",
-              "RelativeDocumentMoniker": "Nilora.Domain\\Entities\\Review.cs",
-              "ToolTip": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Entities\\Review.cs",
-              "RelativeToolTip": "Nilora.Domain\\Entities\\Review.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAA+wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-12T08:01:57.455Z",
-=======
               "DocumentIndex": 2,
               "Title": "ReviewStatus.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Enums\\ReviewStatus.cs",
@@ -200,22 +160,11 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-11T16:57:26.761Z",
->>>>>>> 871530ede6420a637b6b5a82cd98f390de6164ee
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-<<<<<<< HEAD
-              "Title": "Skill.cs",
-              "DocumentMoniker": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Entities\\Skill.cs",
-              "RelativeDocumentMoniker": "Nilora.Domain\\Entities\\Skill.cs",
-              "ToolTip": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Entities\\Skill.cs",
-              "RelativeToolTip": "Nilora.Domain\\Entities\\Skill.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAAACYAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-12T08:00:51.848Z",
-=======
               "Title": "20261111165449_InitialCreate.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Infrastructure\\Persistence\\Migrations\\20261111165449_InitialCreate.cs",
               "RelativeDocumentMoniker": "Nilora.Infrastructure\\Persistence\\Migrations\\20261111165449_InitialCreate.cs",
@@ -225,10 +174,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-11T16:55:02.435Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
               "$type": "Document",
@@ -428,6 +373,16 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Worker\\appsettings.json",
+              "RelativeDocumentMoniker": "Nilora.Worker\\appsettings.json",
+              "ToolTip": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Worker\\appsettings.json",
+              "RelativeToolTip": "Nilora.Worker\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-11-12T08:11:54.45Z",
+=======
               "Title": "User.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Entities\\User.cs",
               "RelativeDocumentMoniker": "Nilora.Domain\\Entities\\User.cs",
@@ -449,11 +404,22 @@
               "ViewState": "AgIAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-11T14:18:47.872Z",
+>>>>>>> 871530ede6420a637b6b5a82cd98f390de6164ee
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+<<<<<<< HEAD
+              "Title": "PortfolioItem.cs",
+              "DocumentMoniker": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Entities\\PortfolioItem.cs",
+              "RelativeDocumentMoniker": "Nilora.Domain\\Entities\\PortfolioItem.cs",
+              "ToolTip": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Entities\\PortfolioItem.cs",
+              "RelativeToolTip": "Nilora.Domain\\Entities\\PortfolioItem.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-12T08:04:25.566Z",
+=======
               "Title": "Technician.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Entities\\Technician.cs",
               "RelativeDocumentMoniker": "Nilora.Domain\\Entities\\Technician.cs",
@@ -462,10 +428,35 @@
               "ViewState": "AgIAAF8AAAAAAAAAAAAkwG8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-11T14:18:27.9Z",
+>>>>>>> 871530ede6420a637b6b5a82cd98f390de6164ee
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
+              "DocumentIndex": 2,
+              "Title": "Review.cs",
+              "DocumentMoniker": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Entities\\Review.cs",
+              "RelativeDocumentMoniker": "Nilora.Domain\\Entities\\Review.cs",
+              "ToolTip": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Entities\\Review.cs",
+              "RelativeToolTip": "Nilora.Domain\\Entities\\Review.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAA+wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-12T08:01:57.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Skill.cs",
+              "DocumentMoniker": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Entities\\Skill.cs",
+              "RelativeDocumentMoniker": "Nilora.Domain\\Entities\\Skill.cs",
+              "ToolTip": "D:\\Projects\\Alireza-Hasanlou\\Nilora\\backend\\Nilora.Domain\\Entities\\Skill.cs",
+              "RelativeToolTip": "Nilora.Domain\\Entities\\Skill.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAACYAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-12T08:00:51.848Z",
+=======
               "DocumentIndex": 23,
               "Title": "Skill.cs",
               "DocumentMoniker": "D:\\c#\\Nilora\\backend\\Nilora.Domain\\Entities\\Skill.cs",

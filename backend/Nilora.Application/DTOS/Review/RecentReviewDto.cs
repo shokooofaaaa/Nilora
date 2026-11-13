@@ -6,15 +6,8 @@ using System.Text;
 namespace Nilora.Application.DTOS.Review
 {
     public record RecentReviewDto(
-        int Id,
-        string FirstName,
-        string LastName,
-        int TechnicianId,
-        ReviewStatus Status,
-        string Comment,
-        int Rating,
-        DateTime CreatedAt,
-        DateTime ReviewedAt,
-        string? MediaUrl);
- 
+        int Id, string FirstName, string LastName,
+        int Rating, string? Comment,
+        ReviewStatus Status, DateTime CreatedAt);
+
 }
