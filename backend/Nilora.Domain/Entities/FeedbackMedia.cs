@@ -1,6 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Nilora.Domain.Entities
 {
@@ -8,11 +5,11 @@ namespace Nilora.Domain.Entities
     {
         public int Id { get; private set; }
 
-        public int ReviewId { get; private set; }
+        public int FeedbackId { get; private set; }
 
         public string FilePath { get; private set; } = null!;
 
-        public Feedback Review { get; private set; } = null!;
+        public Feedback Feedback { get; private set; } = null!;
 
         private FeedbackMedia() { }
 
@@ -21,7 +18,14 @@ namespace Nilora.Domain.Entities
             if (string.IsNullOrWhiteSpace(filePath))
                 throw new ArgumentException("File path is required.");
 
-            FilePath = filePath;
+            string normalizedPath = filePath.Trim();
+
+            if (normalizedPath.Length > 500)
+                throw new ArgumentException(
+                    "File path cannot exceed 500 characters.",
+                    nameof(filePath));
+
+            FilePath = normalizedPath;
         }
     }
 }

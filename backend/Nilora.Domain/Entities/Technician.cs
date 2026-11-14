@@ -38,8 +38,8 @@ namespace Nilora.Domain.Entities
         private readonly List<PortfolioItem> _portfolioItems = [];
         public IReadOnlyCollection<PortfolioItem> PortfolioItems => _portfolioItems;
 
-        private readonly List<Feedback> _reviews = [];
-        public IReadOnlyCollection<Feedback> Reviews => _reviews;
+      private readonly List<Feedback> _feedbacks = [];
+     public IReadOnlyCollection<Feedback> Feedbacks => _feedbacks;
 
         private Technician() { }
 

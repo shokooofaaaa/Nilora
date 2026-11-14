@@ -1,13 +1,12 @@
 ﻿using Nilora.Domain.Enums;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Nilora.Application.DTOS.Review
+namespace Nilora.Application.DTOS.Feedbacks
 {
     public record RecentFeedbackDto(
-        int Id, int Rating, string? Comment,
-        ReviewStatus Status, DateTime CreatedAt);
-
-
+        int Id,
+        int Rating,
+        string Comment,
+        ReviewStatus Status,
+        DateTime CreatedAt);
 }

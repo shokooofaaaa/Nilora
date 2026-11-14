@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Nilora.Application.DTOS.Review;
+using Nilora.Application.DTOS.Feedbacks;
 using Nilora.Application.Interfaces;
 using Nilora.Domain.Enums;
 using Nilora.Infrastructure.Persistence;

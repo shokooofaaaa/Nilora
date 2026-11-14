@@ -34,7 +34,7 @@ namespace Nilora.Infrastructure.Persistence.Configurations
 
             // Technician 1 ---- N Review
             builder.HasOne(x => x.Technician)
-                .WithMany(x => x.Reviews)
+                .WithMany(x => x.Feedbacks)
                 .HasForeignKey(x => x.TechnicianId)
                 .OnDelete(DeleteBehavior.Restrict);
 
@@ -46,9 +46,9 @@ namespace Nilora.Infrastructure.Persistence.Configurations
 
             // Review 1 ---- N ReviewMedia
             builder.HasMany(x => x.Media)
-                .WithOne(x => x.Review)
-                .HasForeignKey(x => x.ReviewId)
-                .OnDelete(DeleteBehavior.Cascade);
+    .WithOne(x => x.Feedback)
+    .HasForeignKey(x => x.FeedbackId)
+    .OnDelete(DeleteBehavior.Cascade);
 
             builder.Navigation(x => x.Media)
                 .UsePropertyAccessMode(PropertyAccessMode.Field);
@@ -63,11 +63,11 @@ namespace Nilora.Infrastructure.Persistence.Configurations
             builder.ToTable(table =>
             {
                 table.HasCheckConstraint(
-                    "CK_Reviews_Rating",
+                    "CK_Feedbacks_Rating",
                     "[Rating] >= 1 AND [Rating] <= 5");
 
                 table.HasCheckConstraint(
-                    "CK_Reviews_Status",
+                    "CK_Feedbacks_Status",
                     "[Status] IN (1, 2, 3)");
             });
         }

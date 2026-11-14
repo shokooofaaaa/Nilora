@@ -61,9 +61,9 @@ namespace Nilora.Infrastructure.Persistence.Migrations
 
                     b.ToTable("Feedbacks", null, t =>
                         {
-                            t.HasCheckConstraint("CK_Reviews_Rating", "[Rating] >= 1 AND [Rating] <= 5");
+                            t.HasCheckConstraint("CK_Feedbacks_Rating", "[Rating] >= 1 AND [Rating] <= 5");
 
-                            t.HasCheckConstraint("CK_Reviews_Status", "[Status] IN (1, 2, 3)");
+                            t.HasCheckConstraint("CK_Feedbacks_Status", "[Status] IN (1, 2, 3)");
                         });
                 });
 
@@ -75,17 +75,17 @@ namespace Nilora.Infrastructure.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("FeedbackId")
+                        .HasColumnType("int");
+
                     b.Property<string>("FilePath")
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<int>("ReviewId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("ReviewId");
+                    b.HasIndex("FeedbackId");
 
                     b.ToTable("FeedbackMedia", (string)null);
                 });
@@ -306,7 +306,7 @@ namespace Nilora.Infrastructure.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Nilora.Domain.Entities.Technician", "Technician")
-                        .WithMany("Reviews")
+                        .WithMany("Feedbacks")
                         .HasForeignKey("TechnicianId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -318,13 +318,13 @@ namespace Nilora.Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("Nilora.Domain.Entities.FeedbackMedia", b =>
                 {
-                    b.HasOne("Nilora.Domain.Entities.Feedback", "Review")
+                    b.HasOne("Nilora.Domain.Entities.Feedback", "Feedback")
                         .WithMany("Media")
-                        .HasForeignKey("ReviewId")
+                        .HasForeignKey("FeedbackId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Review");
+                    b.Navigation("Feedback");
                 });
 
             modelBuilder.Entity("Nilora.Domain.Entities.PortfolioItem", b =>
@@ -391,9 +391,9 @@ namespace Nilora.Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("Nilora.Domain.Entities.Technician", b =>
                 {
-                    b.Navigation("PortfolioItems");
+                    b.Navigation("Feedbacks");
 
-                    b.Navigation("Reviews");
+                    b.Navigation("PortfolioItems");
 
                     b.Navigation("Skills");
                 });
