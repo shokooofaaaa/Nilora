@@ -4,7 +4,16 @@ using Nilora.Infrastructure.Persistence;
 using Nilora.Application.Interfaces;
 using Nilora.Infrastructure.Services;
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("FrontendPolicy", policy =>
+    {
+        policy
+            .WithOrigins("http://localhost:5173")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 // Add services to the container.
 
 builder.Services.AddControllers();

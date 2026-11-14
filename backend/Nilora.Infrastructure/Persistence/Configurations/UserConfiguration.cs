@@ -26,6 +26,9 @@ namespace Nilora.Infrastructure.Persistence.Configurations
                 .IsRequired()
                 .HasMaxLength(500);
 
+            builder.Property(x => x.Role)
+    .IsRequired()
+    .HasConversion<int>();
             builder.Property(x => x.IsActive)
                 .IsRequired();
 

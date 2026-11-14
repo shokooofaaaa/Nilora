@@ -1,9 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Nilora.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Nilora.Infrastructure.Persistence.Configurations
 {
@@ -16,10 +14,22 @@ namespace Nilora.Infrastructure.Persistence.Configurations
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Comment)
-                .IsRequired()
+                .IsRequired(false)
                 .HasMaxLength(2000);
 
             builder.Property(x => x.Rating)
+                .IsRequired();
+
+            builder.Property(x => x.QualityRating)
+                .IsRequired();
+
+            builder.Property(x => x.HygieneRating)
+                .IsRequired();
+
+            builder.Property(x => x.DurabilityRating)
+                .IsRequired();
+
+            builder.Property(x => x.BehaviorRating)
                 .IsRequired();
 
             builder.Property(x => x.Status)
@@ -32,23 +42,23 @@ namespace Nilora.Infrastructure.Persistence.Configurations
             builder.Property(x => x.ReviewedAt)
                 .IsRequired(false);
 
-            // Technician 1 ---- N Review
+            // Technician 1 ---- N Feedback
             builder.HasOne(x => x.Technician)
                 .WithMany(x => x.Feedbacks)
                 .HasForeignKey(x => x.TechnicianId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // User 1 ---- N Review (Admin)
+            // User 1 ---- N Feedback (Admin)
             builder.HasOne(x => x.Admin)
                 .WithMany()
                 .HasForeignKey(x => x.AdminId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Review 1 ---- N ReviewMedia
+            // Feedback 1 ---- N FeedbackMedia
             builder.HasMany(x => x.Media)
-    .WithOne(x => x.Feedback)
-    .HasForeignKey(x => x.FeedbackId)
-    .OnDelete(DeleteBehavior.Cascade);
+                .WithOne(x => x.Feedback)
+                .HasForeignKey(x => x.FeedbackId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.Navigation(x => x.Media)
                 .UsePropertyAccessMode(PropertyAccessMode.Field);
@@ -65,6 +75,22 @@ namespace Nilora.Infrastructure.Persistence.Configurations
                 table.HasCheckConstraint(
                     "CK_Feedbacks_Rating",
                     "[Rating] >= 1 AND [Rating] <= 5");
+
+                table.HasCheckConstraint(
+                    "CK_Feedbacks_QualityRating",
+                    "[QualityRating] >= 1 AND [QualityRating] <= 5");
+
+                table.HasCheckConstraint(
+                    "CK_Feedbacks_HygieneRating",
+                    "[HygieneRating] >= 1 AND [HygieneRating] <= 5");
+
+                table.HasCheckConstraint(
+                    "CK_Feedbacks_DurabilityRating",
+                    "[DurabilityRating] >= 1 AND [DurabilityRating] <= 5");
+
+                table.HasCheckConstraint(
+                    "CK_Feedbacks_BehaviorRating",
+                    "[BehaviorRating] >= 1 AND [BehaviorRating] <= 5");
 
                 table.HasCheckConstraint(
                     "CK_Feedbacks_Status",

@@ -33,13 +33,24 @@ namespace Nilora.Infrastructure.Persistence.Migrations
                     b.Property<int?>("AdminId")
                         .HasColumnType("int");
 
+                    b.Property<int>("BehaviorRating")
+                        .HasColumnType("int");
+
                     b.Property<string>("Comment")
-                        .IsRequired()
                         .HasMaxLength(2000)
                         .HasColumnType("nvarchar(2000)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("DurabilityRating")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HygieneRating")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QualityRating")
+                        .HasColumnType("int");
 
                     b.Property<int>("Rating")
                         .HasColumnType("int");
@@ -61,6 +72,14 @@ namespace Nilora.Infrastructure.Persistence.Migrations
 
                     b.ToTable("Feedbacks", null, t =>
                         {
+                            t.HasCheckConstraint("CK_Feedbacks_BehaviorRating", "[BehaviorRating] >= 1 AND [BehaviorRating] <= 5");
+
+                            t.HasCheckConstraint("CK_Feedbacks_DurabilityRating", "[DurabilityRating] >= 1 AND [DurabilityRating] <= 5");
+
+                            t.HasCheckConstraint("CK_Feedbacks_HygieneRating", "[HygieneRating] >= 1 AND [HygieneRating] <= 5");
+
+                            t.HasCheckConstraint("CK_Feedbacks_QualityRating", "[QualityRating] >= 1 AND [QualityRating] <= 5");
+
                             t.HasCheckConstraint("CK_Feedbacks_Rating", "[Rating] >= 1 AND [Rating] <= 5");
 
                             t.HasCheckConstraint("CK_Feedbacks_Status", "[Status] IN (1, 2, 3)");
@@ -289,6 +308,9 @@ namespace Nilora.Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
+
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

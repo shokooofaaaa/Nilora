@@ -13,9 +13,17 @@ namespace Nilora.Domain.Entities
 
         public int? AdminId { get; private set; }
 
-        public string Comment { get; private set; } = null!;
+        public string? Comment { get; private set; }
 
         public int Rating { get; private set; }
+
+        public int QualityRating { get; private set; }
+
+        public int HygieneRating { get; private set; }
+
+        public int DurabilityRating { get; private set; }
+
+        public int BehaviorRating { get; private set; }
 
         public ReviewStatus Status { get; private set; }
 
@@ -33,7 +41,14 @@ namespace Nilora.Domain.Entities
 
         private Feedback() { }
 
-        public Feedback(int technicianId, string comment, int rating)
+        public Feedback(
+            int technicianId,
+            int qualityRating,
+            int hygieneRating,
+            int durabilityRating,
+            int behaviorRating,
+            int rating,
+            string? comment = null)
         {
             if (technicianId <= 0)
                 throw new ArgumentException("Invalid technician ID.");
@@ -42,31 +57,56 @@ namespace Nilora.Domain.Entities
             Status = ReviewStatus.Pending;
             CreatedAt = DateTime.UtcNow;
 
-            Update(comment, rating);
+            Update(
+                qualityRating,
+                hygieneRating,
+                durabilityRating,
+                behaviorRating,
+                rating,
+                comment);
         }
 
-        public void Update(string comment, int rating)
+        public void Update(
+            int qualityRating,
+            int hygieneRating,
+            int durabilityRating,
+            int behaviorRating,
+            int rating,
+            string? comment = null)
         {
             if (Status != ReviewStatus.Pending)
                 throw new InvalidOperationException(
                     "Only pending feedback can be edited.");
 
-            if (string.IsNullOrWhiteSpace(comment))
-                throw new ArgumentException(
-                    "Comment is required.", nameof(comment));
+            ValidateRating(qualityRating, nameof(qualityRating));
+            ValidateRating(hygieneRating, nameof(hygieneRating));
+            ValidateRating(durabilityRating, nameof(durabilityRating));
+            ValidateRating(behaviorRating, nameof(behaviorRating));
+            ValidateRating(rating, nameof(rating));
 
-            string normalizedComment = comment.Trim();
+            string? normalizedComment = string.IsNullOrWhiteSpace(comment)
+                ? null
+                : comment.Trim();
 
-            if (normalizedComment.Length > 2000)
+            if (normalizedComment?.Length > 2000)
                 throw new ArgumentException(
                     "Comment cannot exceed 2000 characters.",
                     nameof(comment));
 
-            if (rating < 1 || rating > 5)
-                throw new ArgumentOutOfRangeException(nameof(rating));
-
-            Comment = normalizedComment;
+            QualityRating = qualityRating;
+            HygieneRating = hygieneRating;
+            DurabilityRating = durabilityRating;
+            BehaviorRating = behaviorRating;
             Rating = rating;
+            Comment = normalizedComment;
+        }
+
+        private static void ValidateRating(int rating, string parameterName)
+        {
+            if (rating < 1 || rating > 5)
+                throw new ArgumentOutOfRangeException(
+                    parameterName,
+                    "Rating must be between 1 and 5.");
         }
 
         public void AddMedia(string filePath)
