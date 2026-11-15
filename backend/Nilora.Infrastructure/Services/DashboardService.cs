@@ -24,7 +24,7 @@ public class DashboardService : IDashboardService
         int technicianId,
         CancellationToken cancellationToken = default)
     {
-        var reviews = _context.Reviews
+        var reviews = _context.Feedbacks
             .Where(r => r.TechnicianId == technicianId);
 
         var totalReviews = await reviews.CountAsync(cancellationToken);
@@ -55,7 +55,7 @@ public class DashboardService : IDashboardService
             int technicianId,
             CancellationToken cancellationToken = default)
     {
-        var distribution = await _context.Reviews
+        var distribution = await _context.Feedbacks
             .Where(r =>
                 r.TechnicianId == technicianId &&
                 r.Status == ReviewStatus.Approved)

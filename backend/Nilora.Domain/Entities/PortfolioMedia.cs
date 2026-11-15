@@ -29,7 +29,14 @@ namespace Nilora.Domain.Entities
             if (string.IsNullOrWhiteSpace(filePath))
                 throw new ArgumentException("File path is required.");
 
-            FilePath = filePath;
+            string normalizedPath = filePath.Trim();
+
+            if (normalizedPath.Length > 500)
+                throw new ArgumentException(
+                    "File path cannot exceed 500 characters.",
+                    nameof(filePath));
+
+            FilePath = normalizedPath;
         }
 
         public void ChangeDisplayOrder(int displayOrder)

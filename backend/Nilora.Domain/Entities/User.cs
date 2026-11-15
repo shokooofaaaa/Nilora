@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Nilora.Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -23,13 +24,14 @@ namespace Nilora.Domain.Entities
 
         public Technician? Technician { get; private set; }
 
+        public UserRole Role { get; private set; }
         private User() { }
 
         public User(string phoneNumber, string passwordHash)
         {
             SetPhoneNumber(phoneNumber);
             SetPasswordHash(passwordHash);
-
+            Role = UserRole.Technician;
             IsActive = true;
             IsPhoneNumberVerified = false;
             CreatedAt = DateTime.UtcNow;

@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Nilora.Domain.Entities;
 using System;
@@ -69,11 +69,7 @@ namespace Nilora.Infrastructure.Persistence.Configurations
                 .HasForeignKey(x => x.TechnicianId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Technician 1 ---- N Review
-            builder.HasMany(x => x.Reviews)
-                .WithOne(x => x.Technician)
-                .HasForeignKey(x => x.TechnicianId)
-                .OnDelete(DeleteBehavior.Restrict);
+
         }
     }
     }

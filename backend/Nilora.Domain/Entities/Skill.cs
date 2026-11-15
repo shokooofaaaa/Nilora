@@ -19,7 +19,7 @@ namespace Nilora.Domain.Entities
         public Skill(string title, int displayOrder = 0)
         {
             ChangeTitle(title);
-            DisplayOrder = displayOrder;
+            ChangeDisplayOrder(displayOrder);
             IsActive = true;
         }
 
