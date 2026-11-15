@@ -9,11 +9,11 @@ using Nilora.Infrastructure.Persistence;
 
 #nullable disable
 
-namespace Nilora.Infrastructure.Persistence.Migrations
+namespace Nilora.Infrastructure.Migrations
 {
     [DbContext(typeof(NiloraDbContext))]
-    [Migration("20261111165449_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20261115165524_initialCreate")]
+    partial class initialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,108 @@ namespace Nilora.Infrastructure.Persistence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("Nilora.Domain.Entities.Feedback", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("AdminId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BehaviorRating")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ClientIdentifierHash")
+                        .HasMaxLength(64)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(64)");
+
+                    b.Property<string>("Comment")
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DurabilityRating")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HygieneRating")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<int>("QualityRating")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ReviewedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TechnicianId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdminId");
+
+                    b.HasIndex("TechnicianId", "ClientIdentifierHash", "CreatedAt");
+
+                    b.HasIndex("TechnicianId", "Status", "CreatedAt");
+
+                    b.ToTable("Feedbacks", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_Feedbacks_BehaviorRating", "[BehaviorRating] >= 1 AND [BehaviorRating] <= 5");
+
+                            t.HasCheckConstraint("CK_Feedbacks_DurabilityRating", "[DurabilityRating] >= 1 AND [DurabilityRating] <= 5");
+
+                            t.HasCheckConstraint("CK_Feedbacks_HygieneRating", "[HygieneRating] >= 1 AND [HygieneRating] <= 5");
+
+                            t.HasCheckConstraint("CK_Feedbacks_QualityRating", "[QualityRating] >= 1 AND [QualityRating] <= 5");
+
+                            t.HasCheckConstraint("CK_Feedbacks_Rating", "[Rating] >= 1 AND [Rating] <= 5");
+
+                            t.HasCheckConstraint("CK_Feedbacks_Status", "[Status] IN (1, 2, 3)");
+                        });
+                });
+
+            modelBuilder.Entity("Nilora.Domain.Entities.FeedbackMedia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("FeedbackId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FilePath")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FeedbackId");
+
+                    b.ToTable("FeedbackMedia", (string)null);
+                });
 
             modelBuilder.Entity("Nilora.Domain.Entities.PortfolioItem", b =>
                 {
@@ -89,84 +191,6 @@ namespace Nilora.Infrastructure.Persistence.Migrations
                         {
                             t.HasCheckConstraint("CK_PortfolioMedia_DisplayOrder", "[DisplayOrder] >= 0");
                         });
-                });
-
-            modelBuilder.Entity("Nilora.Domain.Entities.Review", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("AdminId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Comment")
-                        .IsRequired()
-                        .HasMaxLength(2000)
-                        .HasColumnType("nvarchar(2000)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<int>("Rating")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ReviewedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TechnicianId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AdminId");
-
-                    b.HasIndex("TechnicianId", "Status", "CreatedAt");
-
-                    b.ToTable("Reviews", null, t =>
-                        {
-                            t.HasCheckConstraint("CK_Reviews_Rating", "[Rating] >= 1 AND [Rating] <= 5");
-
-                            t.HasCheckConstraint("CK_Reviews_Status", "[Status] IN (1, 2, 3)");
-                        });
-                });
-
-            modelBuilder.Entity("Nilora.Domain.Entities.ReviewMedia", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("FilePath")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<int>("ReviewId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ReviewId");
-
-                    b.ToTable("ReviewMedia", (string)null);
                 });
 
             modelBuilder.Entity("Nilora.Domain.Entities.Skill", b =>
@@ -303,12 +327,44 @@ namespace Nilora.Infrastructure.Persistence.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("PhoneNumber")
                         .IsUnique();
 
                     b.ToTable("Users", (string)null);
+                });
+
+            modelBuilder.Entity("Nilora.Domain.Entities.Feedback", b =>
+                {
+                    b.HasOne("Nilora.Domain.Entities.User", "Admin")
+                        .WithMany()
+                        .HasForeignKey("AdminId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Nilora.Domain.Entities.Technician", "Technician")
+                        .WithMany("Feedbacks")
+                        .HasForeignKey("TechnicianId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Admin");
+
+                    b.Navigation("Technician");
+                });
+
+            modelBuilder.Entity("Nilora.Domain.Entities.FeedbackMedia", b =>
+                {
+                    b.HasOne("Nilora.Domain.Entities.Feedback", "Feedback")
+                        .WithMany("Media")
+                        .HasForeignKey("FeedbackId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Feedback");
                 });
 
             modelBuilder.Entity("Nilora.Domain.Entities.PortfolioItem", b =>
@@ -331,35 +387,6 @@ namespace Nilora.Infrastructure.Persistence.Migrations
                         .IsRequired();
 
                     b.Navigation("PortfolioItem");
-                });
-
-            modelBuilder.Entity("Nilora.Domain.Entities.Review", b =>
-                {
-                    b.HasOne("Nilora.Domain.Entities.User", "Admin")
-                        .WithMany()
-                        .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("Nilora.Domain.Entities.Technician", "Technician")
-                        .WithMany("Reviews")
-                        .HasForeignKey("TechnicianId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Admin");
-
-                    b.Navigation("Technician");
-                });
-
-            modelBuilder.Entity("Nilora.Domain.Entities.ReviewMedia", b =>
-                {
-                    b.HasOne("Nilora.Domain.Entities.Review", "Review")
-                        .WithMany("Media")
-                        .HasForeignKey("ReviewId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Review");
                 });
 
             modelBuilder.Entity("Nilora.Domain.Entities.Technician", b =>
@@ -392,21 +419,21 @@ namespace Nilora.Infrastructure.Persistence.Migrations
                     b.Navigation("Technician");
                 });
 
-            modelBuilder.Entity("Nilora.Domain.Entities.PortfolioItem", b =>
+            modelBuilder.Entity("Nilora.Domain.Entities.Feedback", b =>
                 {
                     b.Navigation("Media");
                 });
 
-            modelBuilder.Entity("Nilora.Domain.Entities.Review", b =>
+            modelBuilder.Entity("Nilora.Domain.Entities.PortfolioItem", b =>
                 {
                     b.Navigation("Media");
                 });
 
             modelBuilder.Entity("Nilora.Domain.Entities.Technician", b =>
                 {
-                    b.Navigation("PortfolioItems");
+                    b.Navigation("Feedbacks");
 
-                    b.Navigation("Reviews");
+                    b.Navigation("PortfolioItems");
 
                     b.Navigation("Skills");
                 });
