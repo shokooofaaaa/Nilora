@@ -41,7 +41,24 @@ namespace Nilora.Infrastructure.Persistence.Configurations
 
             builder.Property(x => x.ReviewedAt)
                 .IsRequired(false);
+            builder.Property(x => x.ClientIdentifierHash)
+    .IsRequired(false)
+    .HasMaxLength(64)
+    .IsUnicode(false);
 
+            builder.Property(x => x.IsDeleted)
+                .IsRequired()
+                .HasDefaultValue(false);
+
+            builder.Property(x => x.DeletedAt)
+                .IsRequired(false);
+
+            builder.HasIndex(x => new
+            {
+                x.TechnicianId,
+                x.ClientIdentifierHash,
+                x.CreatedAt
+            });
             // Technician 1 ---- N Feedback
             builder.HasOne(x => x.Technician)
                 .WithMany(x => x.Feedbacks)

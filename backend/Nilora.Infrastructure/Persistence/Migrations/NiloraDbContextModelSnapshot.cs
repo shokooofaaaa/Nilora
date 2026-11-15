@@ -36,6 +36,11 @@ namespace Nilora.Infrastructure.Persistence.Migrations
                     b.Property<int>("BehaviorRating")
                         .HasColumnType("int");
 
+                    b.Property<string>("ClientIdentifierHash")
+                        .HasMaxLength(64)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(64)");
+
                     b.Property<string>("Comment")
                         .HasMaxLength(2000)
                         .HasColumnType("nvarchar(2000)");
@@ -43,11 +48,19 @@ namespace Nilora.Infrastructure.Persistence.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("DurabilityRating")
                         .HasColumnType("int");
 
                     b.Property<int>("HygieneRating")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<int>("QualityRating")
                         .HasColumnType("int");
@@ -67,6 +80,8 @@ namespace Nilora.Infrastructure.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AdminId");
+
+                    b.HasIndex("TechnicianId", "ClientIdentifierHash", "CreatedAt");
 
                     b.HasIndex("TechnicianId", "Status", "CreatedAt");
 

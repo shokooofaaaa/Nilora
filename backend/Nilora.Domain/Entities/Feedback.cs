@@ -2,7 +2,7 @@
 using Nilora.Domain.Enums;
 using System;
 using System.Collections.Generic;
-
+using System.Linq;
 namespace Nilora.Domain.Entities
 {
     public class Feedback
@@ -38,22 +38,44 @@ namespace Nilora.Domain.Entities
         private readonly List<FeedbackMedia> _media = [];
 
         public IReadOnlyCollection<FeedbackMedia> Media => _media;
+        public string? ClientIdentifierHash { get; private set; }
 
+        public bool IsDeleted { get; private set; }
+
+        public DateTime? DeletedAt { get; private set; }
         private Feedback() { }
 
         public Feedback(
-            int technicianId,
-            int qualityRating,
-            int hygieneRating,
-            int durabilityRating,
-            int behaviorRating,
-            int rating,
-            string? comment = null)
+    int technicianId,
+    string clientIdentifierHash,
+    int qualityRating,
+    int hygieneRating,
+    int durabilityRating,
+    int behaviorRating,
+    int rating,
+    string? comment = null)
         {
             if (technicianId <= 0)
                 throw new ArgumentException("Invalid technician ID.");
 
+            if (string.IsNullOrWhiteSpace(clientIdentifierHash))
+                throw new ArgumentException(
+                    "Client identifier hash is required.",
+                    nameof(clientIdentifierHash));
+
+            string normalizedHash = clientIdentifierHash.Trim();
+
+            if (normalizedHash.Length != 64 ||
+                !normalizedHash.All(Uri.IsHexDigit))
+            {
+                throw new ArgumentException(
+                    "Client identifier hash must be a valid SHA-256 hex string.",
+                    nameof(clientIdentifierHash));
+            }
+
             TechnicianId = technicianId;
+            ClientIdentifierHash = normalizedHash.ToLowerInvariant();
+
             Status = ReviewStatus.Pending;
             CreatedAt = DateTime.UtcNow;
 
@@ -74,6 +96,10 @@ namespace Nilora.Domain.Entities
             int rating,
             string? comment = null)
         {
+
+            if (IsDeleted)
+                throw new InvalidOperationException(
+                    "Deleted feedback cannot be modified.");
             if (Status != ReviewStatus.Pending)
                 throw new InvalidOperationException(
                     "Only pending feedback can be edited.");
@@ -111,6 +137,10 @@ namespace Nilora.Domain.Entities
 
         public void AddMedia(string filePath)
         {
+            if (IsDeleted)
+                throw new InvalidOperationException(
+                    "Deleted feedback cannot be modified.");
+
             if (Status != ReviewStatus.Pending)
                 throw new InvalidOperationException(
                     "Media can only be added to pending feedback.");
@@ -131,6 +161,11 @@ namespace Nilora.Domain.Entities
 
         public void Approve(int adminId)
         {
+            if (IsDeleted)
+                throw new InvalidOperationException(
+                    "Deleted feedback cannot be modified.");
+
+
             if (Status != ReviewStatus.Pending)
                 throw new InvalidOperationException(
                     "Only pending feedback can be approved.");
@@ -145,6 +180,10 @@ namespace Nilora.Domain.Entities
 
         public void Reject(int adminId)
         {
+            if (IsDeleted)
+                throw new InvalidOperationException(
+                    "Deleted feedback cannot be modified.");
+
             if (Status != ReviewStatus.Pending)
                 throw new InvalidOperationException(
                     "Only pending feedback can be rejected.");
@@ -155,6 +194,15 @@ namespace Nilora.Domain.Entities
             Status = ReviewStatus.Rejected;
             AdminId = adminId;
             ReviewedAt = DateTime.UtcNow;
+        }
+
+        public void SoftDelete()
+        {
+            if (IsDeleted)
+                return;
+
+            IsDeleted = true;
+            DeletedAt = DateTime.UtcNow;
         }
     }
 }
