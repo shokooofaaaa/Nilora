@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Nilora.Infrastructure.Persistence.Migrations
+namespace Nilora.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class initialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -38,7 +38,8 @@ namespace Nilora.Infrastructure.Persistence.Migrations
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     IsPhoneNumberVerified = table.Column<bool>(type: "bit", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LastLoginAt = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    LastLoginAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Role = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -74,6 +75,50 @@ namespace Nilora.Infrastructure.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Feedbacks",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TechnicianId = table.Column<int>(type: "int", nullable: false),
+                    AdminId = table.Column<int>(type: "int", nullable: true),
+                    Comment = table.Column<string>(type: "nvarchar(2000)", maxLength: 2000, nullable: true),
+                    Rating = table.Column<int>(type: "int", nullable: false),
+                    QualityRating = table.Column<int>(type: "int", nullable: false),
+                    HygieneRating = table.Column<int>(type: "int", nullable: false),
+                    DurabilityRating = table.Column<int>(type: "int", nullable: false),
+                    BehaviorRating = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ReviewedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ClientIdentifierHash = table.Column<string>(type: "varchar(64)", unicode: false, maxLength: 64, nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Feedbacks", x => x.Id);
+                    table.CheckConstraint("CK_Feedbacks_BehaviorRating", "[BehaviorRating] >= 1 AND [BehaviorRating] <= 5");
+                    table.CheckConstraint("CK_Feedbacks_DurabilityRating", "[DurabilityRating] >= 1 AND [DurabilityRating] <= 5");
+                    table.CheckConstraint("CK_Feedbacks_HygieneRating", "[HygieneRating] >= 1 AND [HygieneRating] <= 5");
+                    table.CheckConstraint("CK_Feedbacks_QualityRating", "[QualityRating] >= 1 AND [QualityRating] <= 5");
+                    table.CheckConstraint("CK_Feedbacks_Rating", "[Rating] >= 1 AND [Rating] <= 5");
+                    table.CheckConstraint("CK_Feedbacks_Status", "[Status] IN (1, 2, 3)");
+                    table.ForeignKey(
+                        name: "FK_Feedbacks_Technicians_TechnicianId",
+                        column: x => x.TechnicianId,
+                        principalTable: "Technicians",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Feedbacks_Users_AdminId",
+                        column: x => x.AdminId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "PortfolioItems",
                 columns: table => new
                 {
@@ -93,41 +138,6 @@ namespace Nilora.Infrastructure.Persistence.Migrations
                         name: "FK_PortfolioItems_Technicians_TechnicianId",
                         column: x => x.TechnicianId,
                         principalTable: "Technicians",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Reviews",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    TechnicianId = table.Column<int>(type: "int", nullable: false),
-                    AdminId = table.Column<int>(type: "int", nullable: true),
-                    FirstName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Comment = table.Column<string>(type: "nvarchar(2000)", maxLength: 2000, nullable: false),
-                    Rating = table.Column<int>(type: "int", nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ReviewedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Reviews", x => x.Id);
-                    table.CheckConstraint("CK_Reviews_Rating", "[Rating] >= 1 AND [Rating] <= 5");
-                    table.CheckConstraint("CK_Reviews_Status", "[Status] IN (1, 2, 3)");
-                    table.ForeignKey(
-                        name: "FK_Reviews_Technicians_TechnicianId",
-                        column: x => x.TechnicianId,
-                        principalTable: "Technicians",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Reviews_Users_AdminId",
-                        column: x => x.AdminId,
-                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -157,6 +167,26 @@ namespace Nilora.Infrastructure.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "FeedbackMedia",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FeedbackId = table.Column<int>(type: "int", nullable: false),
+                    FilePath = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FeedbackMedia", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_FeedbackMedia_Feedbacks_FeedbackId",
+                        column: x => x.FeedbackId,
+                        principalTable: "Feedbacks",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "PortfolioMedia",
                 columns: table => new
                 {
@@ -178,25 +208,25 @@ namespace Nilora.Infrastructure.Persistence.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "ReviewMedia",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ReviewId = table.Column<int>(type: "int", nullable: false),
-                    FilePath = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ReviewMedia", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ReviewMedia_Reviews_ReviewId",
-                        column: x => x.ReviewId,
-                        principalTable: "Reviews",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
+            migrationBuilder.CreateIndex(
+                name: "IX_FeedbackMedia_FeedbackId",
+                table: "FeedbackMedia",
+                column: "FeedbackId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Feedbacks_AdminId",
+                table: "Feedbacks",
+                column: "AdminId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Feedbacks_TechnicianId_ClientIdentifierHash_CreatedAt",
+                table: "Feedbacks",
+                columns: new[] { "TechnicianId", "ClientIdentifierHash", "CreatedAt" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Feedbacks_TechnicianId_Status_CreatedAt",
+                table: "Feedbacks",
+                columns: new[] { "TechnicianId", "Status", "CreatedAt" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_PortfolioItems_TechnicianId",
@@ -207,21 +237,6 @@ namespace Nilora.Infrastructure.Persistence.Migrations
                 name: "IX_PortfolioMedia_PortfolioItemId_DisplayOrder",
                 table: "PortfolioMedia",
                 columns: new[] { "PortfolioItemId", "DisplayOrder" });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ReviewMedia_ReviewId",
-                table: "ReviewMedia",
-                column: "ReviewId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Reviews_AdminId",
-                table: "Reviews",
-                column: "AdminId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Reviews_TechnicianId_Status_CreatedAt",
-                table: "Reviews",
-                columns: new[] { "TechnicianId", "Status", "CreatedAt" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Skills_Title",
@@ -257,19 +272,19 @@ namespace Nilora.Infrastructure.Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "PortfolioMedia");
+                name: "FeedbackMedia");
 
             migrationBuilder.DropTable(
-                name: "ReviewMedia");
+                name: "PortfolioMedia");
 
             migrationBuilder.DropTable(
                 name: "TechnicianSkills");
 
             migrationBuilder.DropTable(
-                name: "PortfolioItems");
+                name: "Feedbacks");
 
             migrationBuilder.DropTable(
-                name: "Reviews");
+                name: "PortfolioItems");
 
             migrationBuilder.DropTable(
                 name: "Skills");

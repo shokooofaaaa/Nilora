@@ -7,5 +7,12 @@ namespace Nilora.Application.Interfaces
         Task<IReadOnlyList<RecentFeedbackDto>> GetRecentFeedbacksAsync(
             int technicianId,
             CancellationToken ct);
+
+        Task<int> CreateFeedbackAsync( string qrCodeToken,  string clientIdentifier
+            ,CreateFeedbackRequestDto request,   CancellationToken ct);
+   
+  
+  
+ 
     }
 }
