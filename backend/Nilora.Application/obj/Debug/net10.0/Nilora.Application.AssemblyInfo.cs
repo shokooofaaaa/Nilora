@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Nilora.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c38b40bfca4aee4f74a4bede9a2a77adaa2d121c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9ecc10bf92dd16ddbabf750180a3250a286a79e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Nilora.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Nilora.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
