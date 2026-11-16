@@ -17,3 +17,34 @@
 # IDE files
 .idea/
 .vscode/
+
+# Additional standard .NET and Visual Studio files
+*.userosscache
+*.sln.docstates
+
+# Test and coverage output
+*.trx
+coverage/
+coverage*.xml
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# Generated tooling and local state
+artifacts/
+*.pidb
+*.rsuser
+
+# Operating system files
+.DS_Store
+Thumbs.db
