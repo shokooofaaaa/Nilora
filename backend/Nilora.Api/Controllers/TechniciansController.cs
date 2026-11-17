@@ -39,4 +39,50 @@ public class TechniciansController : ControllerBase
 
         return Ok(profile);
     }
+
+    /// <summary>
+    /// دریافت اطلاعات فرم عمومی ثبت بازخورد برای تکنسین.
+    /// </summary>
+    /// <param name="qrCodeToken">توکن QR تکنسین (QRCodeToken).</param>
+    /// <param name="cancellationToken">توکن لغو درخواست.</param>
+    /// <returns>200 در صورت موفقیت، 400 برای توکن نامعتبر، 403 در صورت غیرفعال بودن ثبت بازخورد و 404 در صورت نبود/غیرفعال بودن تکنسین.</returns>
+    [HttpGet("{qrCodeToken}/feedback-form")]
+    [AllowAnonymous]
+    [ProducesResponseType(typeof(PublicFeedbackFormDto), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status403Forbidden)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> GetPublicFeedbackForm(
+        [FromRoute] string qrCodeToken,
+        CancellationToken cancellationToken)
+    {
+        var result = await _technicianService.GetPublicFeedbackFormAsync(
+            qrCodeToken,
+            cancellationToken);
+
+        return result.Status switch
+        {
+            PublicFeedbackFormStatus.Success => Ok(result.Data),
+
+            PublicFeedbackFormStatus.InvalidToken => BadRequest(new
+            {
+                message = result.Message ?? "توکن ورودی نامعتبر است."
+            }),
+
+            PublicFeedbackFormStatus.NotFound => NotFound(new
+            {
+                message = result.Message ?? "تکنسین پیدا نشد یا غیرفعال است."
+            }),
+
+            PublicFeedbackFormStatus.FeedbackDisabled => StatusCode(
+                StatusCodes.Status403Forbidden,
+                new
+                {
+                    message = result.Message
+                        ?? "امکان ثبت بازخورد برای این ناخن‌کار در حال حاضر غیرفعال است."
+                }),
+
+            _ => StatusCode(StatusCodes.Status500InternalServerError)
+        };
+    }
 }
