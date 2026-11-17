@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using Nilora.Application.DTOs.Technicians;
 using Nilora.Application.DTOS.Technicians;
 using Nilora.Application.Interfaces;
+using Nilora.Domain.Entities;
 using Nilora.Domain.Enums;
 using Nilora.Infrastructure.Persistence;
 using System;
@@ -69,7 +71,7 @@ namespace Nilora.Infrastructure.Services
                 technician.Id,
                 ct);
 
-            return new PublicTechnicianProfileDto
+            return new PublicTechnicianProfileDto()
             {
                 return null;
             }
@@ -77,7 +79,7 @@ namespace Nilora.Infrastructure.Services
             TechnicianProfileResponse technicianProfile =
                 new TechnicianProfileResponse()
                 {
-                   FirstName = technician.FirstName,
+                   FirstName = Technician.FirstName,
                    LastName = technician.LastName,
                    Bio = technician.Bio,
                    Address = technician.Address,
