@@ -1,3 +1,4 @@
+using Nilora.Application.DTOs.Technicians;
 using Nilora.Application.DTOS.Technicians;
 
 namespace Nilora.Application.Interfaces
@@ -8,5 +9,12 @@ namespace Nilora.Application.Interfaces
 
            CancellationToken cancellationToken = default);
 
+        Task<PublicTechnicianProfileDto?> GetPublicProfileByTokenAsync(
+            string token,
+            CancellationToken cancellationToken = default);
+
+        Task<PublicFeedbackFormResult> GetPublicFeedbackFormAsync(
+            string qrCodeToken,
+            CancellationToken cancellationToken = default);
     }
 }
