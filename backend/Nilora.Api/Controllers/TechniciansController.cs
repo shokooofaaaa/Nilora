@@ -1,51 +1,42 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Nilora.Application.DTOs.Technicians;
 using Nilora.Application.Interfaces;
-using System.Security.Claims;
 
-namespace Nilora.Api.Controllers
+namespace Nilora.Api.Controllers;
+
+[ApiController]
+[Route("api/public/technicians")]
+[AllowAnonymous]
+public class TechniciansController : ControllerBase
 {
+    private readonly ITechnicianService _technicianService;
 
-    [Authorize]
-
-    [Route("api/[controller]")]
-    [ApiController]
-    public class TechniciansController : ControllerBase
+    public TechniciansController(ITechnicianService technicianService)
     {
-        private readonly ITechnicianService _technicianService;
+        _technicianService = technicianService;
+    }
 
-        public TechniciansController(ITechnicianService technicianService)
-        {
-            this._technicianService = technicianService;
-        }
+    /// <summary>
+    /// دریافت پروفایل عمومی تکنسین با توکن QR.
+    /// </summary>
+    /// <param name="token">توکن QR تکنسین (QRCodeToken).</param>
+    /// <param name="cancellationToken">توکن لغو درخواست.</param>
+    /// <returns>پروفایل عمومی تکنسین یا 404 در صورت نامعتبر بودن توکن/غیرفعال بودن تکنسین یا کاربر.</returns>
+    [HttpGet("{token}")]
+    [ProducesResponseType(typeof(PublicTechnicianProfileDto), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> GetPublicProfile(
+        [FromRoute] string token,
+        CancellationToken cancellationToken)
+    {
+        var profile = await _technicianService.GetPublicProfileByTokenAsync(
+            token,
+            cancellationToken);
 
-        [HttpGet("me")]
-        public async Task<IActionResult> GetMyProfile(
-     CancellationToken cancellationToken)
-        {
-            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+        if (profile is null)
+            return NotFound();
 
-            if (userIdClaim is null)
-            {
-                return Unauthorized();
-            }
-
-            if (!int.TryParse(userIdClaim.Value, out var userId))
-            {
-                return Unauthorized();
-            }
-
-            var technician = await _technicianService.GetCurrentTechnicianAsync(
-                userId,
-                cancellationToken);
-
-            if (technician is null)
-            {
-                return NotFound();
-            }
-
-            return Ok(technician);
-        }
+        return Ok(profile);
     }
 }
-    

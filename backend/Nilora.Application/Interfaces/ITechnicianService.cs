@@ -1,4 +1,4 @@
-﻿using Nilora.Application.DTOS.Technicians;
+using Nilora.Application.DTOS.Technicians;
 
 namespace Nilora.Application.Interfaces
 {
