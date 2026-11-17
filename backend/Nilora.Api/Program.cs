@@ -45,6 +45,7 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddScoped<IDashboardService, DashboardService>();
 builder.Services.AddScoped<IFeedbackService, FeedbackService>();
+builder.Services.AddScoped<ITechnicianService, TechnicianService>();
 
 var app = builder.Build();
 
