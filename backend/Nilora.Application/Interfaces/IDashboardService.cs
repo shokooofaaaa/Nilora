@@ -4,6 +4,7 @@ using System.Text;
 
 
 using Nilora.Application.DTOs.Dashboard;
+using Nilora.Domain.Enums;
 
 namespace Nilora.Application.Interfaces;
 
@@ -15,5 +16,12 @@ public interface IDashboardService
 
     Task<IReadOnlyList<RatingDistributionDto>> GetRatingDistributionAsync(
         int technicianId,
+        CancellationToken cancellationToken = default);
+
+    Task<DashboardFeedbackListDto?> GetFeedbacksAsync(
+        int userId,
+        int page,
+        int pageSize,
+        ReviewStatus? status,
         CancellationToken cancellationToken = default);
 }

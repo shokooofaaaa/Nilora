@@ -100,4 +100,62 @@ public class DashboardService : IDashboardService
             })
             .ToList();
     }
+
+    public async Task<DashboardFeedbackListDto?> GetFeedbacksAsync(
+        int userId,
+        int page,
+        int pageSize,
+        ReviewStatus? status,
+        CancellationToken cancellationToken = default)
+    {
+        var technicianId = await _context.Technicians
+            .AsNoTracking()
+            .Where(t => t.UserId == userId)
+            .Select(t => (int?)t.Id)
+            .FirstOrDefaultAsync(cancellationToken);
+
+        if (technicianId is null)
+            return null;
+
+        var feedbacks = _context.Feedbacks
+            .AsNoTracking()
+            .Where(f => f.TechnicianId == technicianId.Value && !f.IsDeleted);
+
+        if (status.HasValue)
+            feedbacks = feedbacks.Where(f => f.Status == status.Value);
+
+        var totalCount = await feedbacks.CountAsync(cancellationToken);
+
+        var items = await feedbacks
+            .OrderByDescending(f => f.CreatedAt)
+            .ThenByDescending(f => f.Id)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .Select(f => new DashboardFeedbackItemDto
+            {
+                Id = f.Id,
+                Rating = f.Rating,
+                QualityRating = f.QualityRating,
+                HygieneRating = f.HygieneRating,
+                DurabilityRating = f.DurabilityRating,
+                BehaviorRating = f.BehaviorRating,
+                Comment = f.Comment,
+                Status = f.Status.ToString(),
+                CreatedAt = f.CreatedAt
+            })
+            .ToListAsync(cancellationToken);
+
+        var totalPages = totalCount == 0
+            ? 0
+            : (int)Math.Ceiling(totalCount / (double)pageSize);
+
+        return new DashboardFeedbackListDto
+        {
+            Items = items,
+            Page = page,
+            PageSize = pageSize,
+            TotalCount = totalCount,
+            TotalPages = totalPages
+        };
+    }
 }
