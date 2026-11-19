@@ -6,9 +6,10 @@ using System.Text;
 namespace Nilora.Application.DTOs.Dashboard;
 
 public record DashboardOverviewDto(
-    int TotalReviews,
+    int TotalFeedbacks,
+    int ApprovedFeedbacks,
+    int PendingFeedbacks,
     double AverageRating,
-    int ApprovedReviews,
-    int PendingReviews
+    double PositiveFeedbackPercentage
 );
 
