@@ -1,3 +1,3 @@
-// حالت تست احراز هویت: وقتی true باشد، فرم‌های ورود/ثبت‌نام اعتبارسنجی نمی‌کنند
-// و با زدن دکمه مستقیم به داشبورد می‌روید. وقتی بک‌اند آماده شد، آن را false کنید.
 export const AUTH_TEST_MODE = true;
+
+export const API_BASE_URL = 'https://api.nilora.beauty';

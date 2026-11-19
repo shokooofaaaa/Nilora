@@ -23,7 +23,8 @@ namespace Nilora.Infrastructure.Services
         /// <summary>
         /// توکن QR فقط می‌تواند شامل حرف، رقم، خط تیره و زیرخط باشد.
         /// </summary>
-        private static readonly Regex TokenPattern = new(
+        private static readonly Regex TokenPattern =
+            new(
             "^[A-Za-z0-9_-]+$",
             RegexOptions.CultureInvariant);
 
@@ -213,67 +214,54 @@ namespace Nilora.Infrastructure.Services
         /// معیارهای امتیازدهی فرم بازخورد، مطابق فیلدهای CreateFeedbackRequestDto.
         /// Rating (رضایت کلی) مستقل از چهار معیار دیگر است.
         /// </summary>
+
         private static List<RatingCriterionDto> BuildRatingCriteria()
         {
             return new List<RatingCriterionDto>
-            {
-                new()
-                {
-
-                   FirstName = Technician.FirstName,
-                   LastName = technician.LastName,
-                   Bio = technician.Bio,
-                   Address = technician.Address,
-                    ProfileImagePath = technician.ProfileImagePath,
-                    CoverImagePath = technician.CoverImagePath,
-                    Skills = technician.Skills
-                   .Select(x => new TechnicianSkillResponse
-                   {
-                     SkillId = x.SkillId,
-                     Title = x.Skill.Title
-                    })
-                   .ToList()
-
-                    Key = "qualityRating",
-                    Title = "کیفیت خدمات",
-                    Required = true,
-                    MinValue = 1,
-                    MaxValue = 5
-                },
-                new()
-                {
-                    Key = "hygieneRating",
-                    Title = "رعایت بهداشت",
-                    Required = true,
-                    MinValue = 1,
-                    MaxValue = 5
-                },
-                new()
-                {
-                    Key = "durabilityRating",
-                    Title = "ماندگاری نتیجه",
-                    Required = true,
-                    MinValue = 1,
-                    MaxValue = 5
-                },
-                new()
-                {
-                    Key = "behaviorRating",
-                    Title = "رفتار و برخورد تکنسین",
-                    Required = true,
-                    MinValue = 1,
-                    MaxValue = 5
-                },
-                new()
-                {
-                    Key = "rating",
-                    Title = "رضایت کلی",
-                    Required = true,
-                    MinValue = 1,
-                    MaxValue = 5
-                }
-            };
+    {
+        new()
+        {
+            Key = "qualityRating",
+            Title = "کیفیت خدمات",
+            Required = true,
+            MinValue = 1,
+            MaxValue = 5
+        },
+        new()
+        {
+            Key = "hygieneRating",
+            Title = "رعایت بهداشت",
+            Required = true,
+            MinValue = 1,
+            MaxValue = 5
+        },
+        new()
+        {
+            Key = "durabilityRating",
+            Title = "ماندگاری نتیجه",
+            Required = true,
+            MinValue = 1,
+            MaxValue = 5
+        },
+        new()
+        {
+            Key = "behaviorRating",
+            Title = "رفتار و برخورد تکنسین",
+            Required = true,
+            MinValue = 1,
+            MaxValue = 5
+        },
+        new()
+        {
+            Key = "rating",
+            Title = "رضایت کلی",
+            Required = true,
+            MinValue = 1,
+            MaxValue = 5
         }
+    };
+        }
+
 
         /// <summary>
         /// مسیر ذخیره‌شده در دیتابیس را به آدرس قابل استفاده در فرانت‌اند تبدیل می‌کند

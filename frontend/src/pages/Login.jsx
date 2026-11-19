@@ -1,54 +1,119 @@
+
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { User, Lock } from 'lucide-react';
 import AuthLayout from '../components/AuthLayout.jsx';
 import Field from '../components/Field.jsx';
 import { useAuth } from '../context/AuthContext.jsx';
-import { AUTH_TEST_MODE } from '../config.js';
+import { authApi } from '../utils/api.js';
 
-// صفحه ورود
 export default function Login() {
-  const { login } = useAuth();
-  const navigate = useNavigate();
-  const [form, setForm] = useState({ identifier: '', password: '' });
-  const [error, setError] = useState('');
+    const { login } = useAuth();
+    const navigate = useNavigate();
 
-  const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+    const [form, setForm] = useState({
+        identifier: '',
+        password: '',
+    });
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    setError('');
-    // در حالت تست اعتبارسنجی انجام نمی‌شود
-    if (!AUTH_TEST_MODE && (!form.identifier.trim() || !form.password)) {
-      setError('شماره موبایل/ایمیل و رمز عبور را وارد کنید.');
-      return;
-    }
-    // TODO: اتصال به بک‌اند:
-    // const res = await fetch('/api/auth/login', { method: 'POST', body: JSON.stringify(form) });
-    // اگر موفق بود، توکن/اطلاعات کاربر را به login بدهید.
-    login({ name: form.identifier.trim() || 'کاربر تست' });
-    navigate('/', { replace: true });
-  };
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
 
-  return (
-    <AuthLayout
-      title="خوش آمدید 💗"
-      subtitle="برای ورود به پنل کاربری، اطلاعات خود را وارد کنید"
-      footer={<>حساب کاربری ندارید؟ <Link to="/register">ثبت‌نام کنید</Link></>}
-    >
-      <form className="auth-form" onSubmit={onSubmit} noValidate>
-        <Field icon={User} name="identifier" placeholder="شماره موبایل یا ایمیل" autoComplete="username"
-               value={form.identifier} onChange={onChange} />
-        <Field icon={Lock} type="password" name="password" placeholder="رمز عبور" autoComplete="current-password"
-               value={form.password} onChange={onChange} />
-        <div className="auth-row">
-          <label className="check"><input type="checkbox" /> مرا به خاطر بسپار</label>
-          <a href="#" onClick={(e) => e.preventDefault()}>فراموشی رمز عبور؟</a>
-        </div>
-        {error && <div className="auth-error">{error}</div>}
-        <button type="submit" className="auth-btn">ورود</button>
-        {AUTH_TEST_MODE && <p className="test-note">حالت تست فعال است: با زدن «ورود» مستقیم به داشبورد می‌روید.</p>}
-      </form>
-    </AuthLayout>
-  );
+    const onChange = (e) => {
+        setForm((previous) => ({
+            ...previous,
+            [e.target.name]: e.target.value,
+        }));
+    };
+
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        setError('');
+
+        const phoneNumber = form.identifier.trim();
+
+        if (!/^09\d{9}$/.test(phoneNumber)) {
+            setError('شماره موبایل معتبر نیست.');
+            return;
+        }
+
+        if (!form.password) {
+            setError('رمز عبور را وارد کنید.');
+            return;
+        }
+
+        setLoading(true);
+
+        try {
+            const response = await authApi.login({
+                phoneNumber,
+                password: form.password,
+            });
+
+            await login(response);
+
+            navigate('/', { replace: true });
+        } catch (error) {
+            setError(error.message || 'ورود انجام نشد.');
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return (
+        <AuthLayout
+            title="خوش آمدید 💗"
+            subtitle="برای ورود به پنل کاربری، اطلاعات خود را وارد کنید"
+            footer={
+                <>
+                    حساب کاربری ندارید؟ <Link to="/register">ثبت‌نام کنید</Link>
+                </>
+            }
+        >
+            <form className="auth-form" onSubmit={onSubmit} noValidate>
+                <Field
+                    icon={User}
+                    name="identifier"
+                    placeholder="شماره موبایل"
+                    autoComplete="username"
+                    inputMode="numeric"
+                    value={form.identifier}
+                    onChange={onChange}
+                />
+
+                <Field
+                    icon={Lock}
+                    type="password"
+                    name="password"
+                    placeholder="رمز عبور"
+                    autoComplete="current-password"
+                    value={form.password}
+                    onChange={onChange}
+                />
+
+                <div className="auth-row">
+                    <label className="check">
+                        <input type="checkbox" />
+                        مرا به خاطر بسپار
+                    </label>
+
+                    <a href="#" onClick={(e) => e.preventDefault()}>
+                        فراموشی رمز عبور؟
+                    </a>
+                </div>
+
+                {error && (
+                    <div className="auth-error">{error}</div>
+                )}
+
+                <button
+                    type="submit"
+                    className="auth-btn"
+                    disabled={loading}
+                >
+                    {loading ? 'در حال ورود...' : 'ورود'}
+                </button>
+            </form>
+        </AuthLayout>
+    );
 }

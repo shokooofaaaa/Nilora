@@ -1,7 +1,5 @@
 ﻿using Nilora.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace Nilora.Domain.Entities
 {
