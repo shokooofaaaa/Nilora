@@ -42,6 +42,39 @@ public class DashboardController : ControllerBase
         return Ok(result);
     }
 
+    [HttpGet("feedbacks/{id:int}")]
+    [Authorize(Roles = "Technician")]
+    [ProducesResponseType(typeof(DashboardFeedbackDetailDto), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    [ProducesResponseType(StatusCodes.Status403Forbidden)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> GetFeedbackDetail(
+        int id,
+        CancellationToken cancellationToken = default)
+    {
+        if (id <= 0)
+            return BadRequest("Feedback ID must be greater than zero.");
+
+        var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+
+        if (userIdClaim is null ||
+            !int.TryParse(userIdClaim.Value, out var userId))
+        {
+            return Unauthorized();
+        }
+
+        var result = await _dashboardService.GetFeedbackDetailAsync(
+            userId,
+            id,
+            cancellationToken);
+
+        if (result is null)
+            return NotFound();
+
+        return Ok(result);
+    }
+
     [HttpGet("feedbacks")]
     [Authorize(Roles = "Technician")]
     [ProducesResponseType(typeof(DashboardFeedbackListDto), StatusCodes.Status200OK)]

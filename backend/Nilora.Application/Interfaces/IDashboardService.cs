@@ -24,4 +24,9 @@ public interface IDashboardService
         int pageSize,
         ReviewStatus? status,
         CancellationToken cancellationToken = default);
+
+    Task<DashboardFeedbackDetailDto?> GetFeedbackDetailAsync(
+        int userId,
+        int feedbackId,
+        CancellationToken cancellationToken = default);
 }

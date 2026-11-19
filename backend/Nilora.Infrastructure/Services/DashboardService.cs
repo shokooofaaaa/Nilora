@@ -158,4 +158,40 @@ public class DashboardService : IDashboardService
             TotalPages = totalPages
         };
     }
+
+    public async Task<DashboardFeedbackDetailDto?> GetFeedbackDetailAsync(
+        int userId,
+        int feedbackId,
+        CancellationToken cancellationToken = default)
+    {
+        var technicianId = await _context.Technicians
+            .AsNoTracking()
+            .Where(t => t.UserId == userId)
+            .Select(t => (int?)t.Id)
+            .FirstOrDefaultAsync(cancellationToken);
+
+        if (technicianId is null)
+            return null;
+
+        return await _context.Feedbacks
+            .AsNoTracking()
+            .Where(f =>
+                f.Id == feedbackId &&
+                f.TechnicianId == technicianId.Value &&
+                !f.IsDeleted)
+            .Select(f => new DashboardFeedbackDetailDto
+            {
+                Id = f.Id,
+                Rating = f.Rating,
+                QualityRating = f.QualityRating,
+                HygieneRating = f.HygieneRating,
+                DurabilityRating = f.DurabilityRating,
+                BehaviorRating = f.BehaviorRating,
+                Comment = f.Comment,
+                Status = f.Status.ToString(),
+                CreatedAt = f.CreatedAt,
+                ReviewedAt = f.ReviewedAt
+            })
+            .FirstOrDefaultAsync(cancellationToken);
+    }
 }
