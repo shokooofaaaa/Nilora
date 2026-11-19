@@ -20,34 +20,55 @@ public class DashboardService : IDashboardService
         _context = context;
     }
 
-    public async Task<DashboardOverviewDto> GetOverviewAsync(
-        int technicianId,
+    public async Task<DashboardOverviewDto?> GetOverviewAsync(
+        int userId,
         CancellationToken cancellationToken = default)
     {
-        var reviews = _context.Feedbacks
-            .Where(r => r.TechnicianId == technicianId);
+        var technicianId = await _context.Technicians
+            .AsNoTracking()
+            .Where(t => t.UserId == userId)
+            .Select(t => (int?)t.Id)
+            .FirstOrDefaultAsync(cancellationToken);
 
-        var totalReviews = await reviews.CountAsync(cancellationToken);
+        if (technicianId is null)
+            return null;
 
-        var approvedReviews = await reviews.CountAsync(
-            r => r.Status == ReviewStatus.Approved,
+        var feedbacks = _context.Feedbacks
+            .AsNoTracking()
+            .Where(f => f.TechnicianId == technicianId.Value && !f.IsDeleted);
+
+        var totalFeedbacks = await feedbacks.CountAsync(cancellationToken);
+
+        var approvedFeedbacks = await feedbacks.CountAsync(
+            f => f.Status == ReviewStatus.Approved,
             cancellationToken);
 
-        var pendingReviews = await reviews.CountAsync(
-            r => r.Status == ReviewStatus.Pending,
+        var pendingFeedbacks = await feedbacks.CountAsync(
+            f => f.Status == ReviewStatus.Pending,
             cancellationToken);
 
-        var averageRating = approvedReviews == 0
+        var averageRating = approvedFeedbacks == 0
+            ? 0d
+            : await feedbacks
+                .Where(f => f.Status == ReviewStatus.Approved)
+                .AverageAsync(f => (double)f.Rating, cancellationToken);
+
+        var positiveFeedbacks = approvedFeedbacks == 0
             ? 0
-            : await reviews
-                .Where(r => r.Status == ReviewStatus.Approved)
-                .AverageAsync(r => (double)r.Rating, cancellationToken);
+            : await feedbacks.CountAsync(
+                f => f.Status == ReviewStatus.Approved && f.Rating >= 4,
+                cancellationToken);
+
+        var positiveFeedbackPercentage = approvedFeedbacks == 0
+            ? 0d
+            : positiveFeedbacks * 100d / approvedFeedbacks;
 
         return new DashboardOverviewDto(
-            totalReviews,
+            totalFeedbacks,
+            approvedFeedbacks,
+            pendingFeedbacks,
             averageRating,
-            approvedReviews,
-            pendingReviews);
+            positiveFeedbackPercentage);
     }
 
     public async Task<IReadOnlyList<RatingDistributionDto>>

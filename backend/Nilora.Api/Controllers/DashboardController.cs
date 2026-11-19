@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Nilora.Application.Interfaces;
 
 namespace Nilora.Api.Controllers;
@@ -16,16 +18,24 @@ public class DashboardController : ControllerBase
 
 
     [HttpGet("overview")]
+    [Authorize(Roles = "Technician")]
     public async Task<IActionResult> GetOverview(
-        [FromQuery] int technicianId,
         CancellationToken cancellationToken)
     {
-        if (technicianId <= 0)
-            return BadRequest("Invalid technician ID.");
+        var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+
+        if (userIdClaim is null ||
+            !int.TryParse(userIdClaim.Value, out var userId))
+        {
+            return Unauthorized();
+        }
 
         var result = await _dashboardService.GetOverviewAsync(
-            technicianId,
+            userId,
             cancellationToken);
+
+        if (result is null)
+            return NotFound();
 
         return Ok(result);
     }

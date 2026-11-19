@@ -9,8 +9,8 @@ namespace Nilora.Application.Interfaces;
 
 public interface IDashboardService
 {
-    Task<DashboardOverviewDto> GetOverviewAsync(
-        int technicianId,
+    Task<DashboardOverviewDto?> GetOverviewAsync(
+        int userId,
         CancellationToken cancellationToken = default);
 
     Task<IReadOnlyList<RatingDistributionDto>> GetRatingDistributionAsync(
