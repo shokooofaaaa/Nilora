@@ -120,5 +120,54 @@ namespace Nilora.Infrastructure.Services
                 }
             });
         }
+
+        /// <summary>
+        /// رد یک بازخورد در حال بررسی توسط مدیر.
+        /// تغییر وضعیت و ثبت اطلاعات حسابرسی (AdminId، ReviewedAt و RejectionReason)
+        /// به صورت اتمیک در یک SaveChangesAsync انجام می‌شود.
+        /// </summary>
+        public async Task<RejectFeedbackResult> RejectFeedbackAsync(
+            int feedbackId,
+            int adminUserId,
+            string? reason,
+            CancellationToken cancellationToken = default)
+        {
+            var feedback = await _context.Feedbacks
+                .FirstOrDefaultAsync(
+                    f => f.Id == feedbackId && !f.IsDeleted,
+                    cancellationToken);
+
+            if (feedback is null)
+                return RejectFeedbackResult.NotFound("بازخورد موردنظر پیدا نشد.");
+
+            if (feedback.Status != ReviewStatus.Pending)
+                return RejectFeedbackResult.Conflict(
+                    "این بازخورد قبلاً بررسی شده است و امکان رد مجدد آن وجود ندارد.");
+
+            var normalizedReason = string.IsNullOrWhiteSpace(reason)
+                ? null
+                : reason.Trim();
+
+            // متد دامنه، وضعیت را به Rejected تغییر داده و AdminId و
+            // ReviewedAt (با DateTime.UtcNow) را به‌روزرسانی می‌کند.
+            feedback.Reject(adminUserId);
+            feedback.RejectionReason = normalizedReason;
+
+            await _context.SaveChangesAsync(cancellationToken);
+
+            return RejectFeedbackResult.Success(new RejectFeedbackResponseDto
+            {
+                Success = true,
+                Message = "بازخورد با موفقیت رد شد.",
+                Feedback = new RejectedFeedbackSummaryDto
+                {
+                    Id = feedback.Id,
+                    Status = feedback.Status.ToString(),
+                    AdminId = feedback.AdminId!.Value,
+                    ReviewedAt = feedback.ReviewedAt!.Value,
+                    RejectionReason = feedback.RejectionReason
+                }
+            });
+        }
     }
 }

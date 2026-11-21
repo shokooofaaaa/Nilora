@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Nilora.Application.DTOS.Feedbacks;
 using Nilora.Application.Interfaces;
 
@@ -95,6 +96,69 @@ public class AdminFeedbacksController : ControllerBase
             {
                 message = result.Message
                     ?? "این بازخورد قبلاً بررسی شده است و امکان تأیید مجدد آن وجود ندارد."
+            }),
+
+            _ => StatusCode(StatusCodes.Status500InternalServerError)
+        };
+    }
+
+    /// <summary>
+    /// رد یک بازخورد در حال بررسی (Pending) توسط مدیر، با دلیل اختیاری.
+    /// </summary>
+    /// <param name="id">شناسه بازخورد.</param>
+    /// <param name="request">دلیل رد (اختیاری، حداکثر ۵۰۰ کاراکتر).</param>
+    /// <param name="cancellationToken">توکن لغو درخواست.</param>
+    /// <returns>200 در صورت رد موفق، 400 برای شناسه/دلیل نامعتبر، 404 برای بازخورد ناموجود و 409 برای بازخورد بررسی‌شده.</returns>
+    [HttpPut("{id:int}/reject")]
+    [ProducesResponseType(typeof(RejectFeedbackResponseDto), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    [ProducesResponseType(StatusCodes.Status403Forbidden)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status409Conflict)]
+    public async Task<IActionResult> RejectFeedback(
+        int id,
+        [FromBody(EmptyBodyBehavior = EmptyBodyBehavior.Allow)]
+        RejectFeedbackRequestDto? request = null,
+        CancellationToken cancellationToken = default)
+    {
+        if (id <= 0)
+            return BadRequest("Feedback ID must be greater than zero.");
+
+        var trimmedReason = string.IsNullOrWhiteSpace(request?.Reason)
+            ? null
+            : request.Reason.Trim();
+
+        if (trimmedReason is not null && trimmedReason.Length > 500)
+            return BadRequest("Rejection reason cannot exceed 500 characters.");
+
+        var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+
+        if (userIdClaim is null ||
+            !int.TryParse(userIdClaim.Value, out var adminUserId))
+        {
+            return Unauthorized();
+        }
+
+        var result = await _adminFeedbackService.RejectFeedbackAsync(
+            id,
+            adminUserId,
+            trimmedReason,
+            cancellationToken);
+
+        return result.Status switch
+        {
+            RejectFeedbackStatus.Success => Ok(result.Data),
+
+            RejectFeedbackStatus.NotFound => NotFound(new
+            {
+                message = result.Message ?? "بازخورد موردنظر پیدا نشد."
+            }),
+
+            RejectFeedbackStatus.Conflict => Conflict(new
+            {
+                message = result.Message
+                    ?? "این بازخورد قبلاً بررسی شده است و امکان رد مجدد آن وجود ندارد."
             }),
 
             _ => StatusCode(StatusCodes.Status500InternalServerError)

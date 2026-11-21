@@ -16,5 +16,11 @@ namespace Nilora.Application.Interfaces
             int feedbackId,
             int adminUserId,
             CancellationToken cancellationToken = default);
+
+        Task<RejectFeedbackResult> RejectFeedbackAsync(
+            int feedbackId,
+            int adminUserId,
+            string? reason,
+            CancellationToken cancellationToken = default);
     }
 }
