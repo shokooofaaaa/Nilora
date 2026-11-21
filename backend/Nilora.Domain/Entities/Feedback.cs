@@ -26,6 +26,7 @@ namespace Nilora.Domain.Entities
         public int BehaviorRating { get; private set; }
 
         public ReviewStatus Status { get; private set; }
+        public string? RejectionReason { get; set; }  
 
         public DateTime CreatedAt { get; private set; }
 
