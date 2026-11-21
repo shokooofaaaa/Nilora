@@ -11,5 +11,10 @@ namespace Nilora.Application.Interfaces
             int page,
             int pageSize,
             CancellationToken cancellationToken = default);
+
+        Task<ApproveFeedbackResult> ApproveFeedbackAsync(
+            int feedbackId,
+            int adminUserId,
+            CancellationToken cancellationToken = default);
     }
 }

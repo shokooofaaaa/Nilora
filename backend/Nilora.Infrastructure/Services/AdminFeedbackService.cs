@@ -78,5 +78,47 @@ namespace Nilora.Infrastructure.Services
                 }
             };
         }
+
+        /// <summary>
+        /// تأیید یک بازخورد در حال بررسی توسط مدیر.
+        /// تغییر وضعیت و ثبت اطلاعات حسابرسی (AdminId و ReviewedAt) به صورت اتمیک
+        /// در یک SaveChangesAsync انجام می‌شود.
+        /// </summary>
+        public async Task<ApproveFeedbackResult> ApproveFeedbackAsync(
+            int feedbackId,
+            int adminUserId,
+            CancellationToken cancellationToken = default)
+        {
+            var feedback = await _context.Feedbacks
+                .FirstOrDefaultAsync(
+                    f => f.Id == feedbackId && !f.IsDeleted,
+                    cancellationToken);
+
+            if (feedback is null)
+                return ApproveFeedbackResult.NotFound("بازخورد موردنظر پیدا نشد.");
+
+            if (feedback.Status != ReviewStatus.Pending)
+                return ApproveFeedbackResult.Conflict(
+                    "این بازخورد قبلاً بررسی شده است و امکان تأیید مجدد آن وجود ندارد.");
+
+            // متد دامنه، وضعیت را به Approved تغییر داده و AdminId و
+            // ReviewedAt (با DateTime.UtcNow) را به صورت اتمیک به‌روزرسانی می‌کند.
+            feedback.Approve(adminUserId);
+
+            await _context.SaveChangesAsync(cancellationToken);
+
+            return ApproveFeedbackResult.Success(new ApproveFeedbackResponseDto
+            {
+                Success = true,
+                Message = "بازخورد با موفقیت تأیید شد.",
+                Feedback = new ApprovedFeedbackSummaryDto
+                {
+                    Id = feedback.Id,
+                    Status = feedback.Status.ToString(),
+                    AdminId = feedback.AdminId!.Value,
+                    ReviewedAt = feedback.ReviewedAt!.Value
+                }
+            });
+        }
     }
 }
